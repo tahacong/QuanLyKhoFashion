@@ -34,16 +34,15 @@ namespace QuanLyKhoFashion
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.txtBienThe_t1 = new System.Windows.Forms.TextBox();
             this.btnXemTonKho_t1 = new System.Windows.Forms.Button();
             this.picMau = new System.Windows.Forms.PictureBox();
             this.lblStt = new System.Windows.Forms.Label();
             this.lblSoluongTaiViTri = new System.Windows.Forms.Label();
-            this.lblSLBienThe = new System.Windows.Forms.Label();
             this.lblSLHangCungMa = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtVitrihientai_t1 = new System.Windows.Forms.TextBox();
             this.cboVitri_t1 = new System.Windows.Forms.ComboBox();
-            this.cboBienThe_t1 = new System.Windows.Forms.ComboBox();
             this.btnNhaphang_t1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,15 +69,12 @@ namespace QuanLyKhoFashion
             this.btnChonListLayHang_t2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvHangthieu = new System.Windows.Forms.DataGridView();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgvTonKho_t2 = new System.Windows.Forms.DataGridView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dgvListCanLay_t2 = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvLayHang = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnChonFileBill_t3_Shopee = new System.Windows.Forms.Button();
+            this.btn_Nhapvaohethong_t3_Shopee = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.btnChonFileBill_t3 = new System.Windows.Forms.Button();
             this.btn_NhapvaohethongTiktok_t3 = new System.Windows.Forms.Button();
@@ -95,6 +91,10 @@ namespace QuanLyKhoFashion
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.dgvBangVitri_t4 = new System.Windows.Forms.DataGridView();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.txtBienThe_t4 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtLinkAnh_t4 = new System.Windows.Forms.TextBox();
             this.btnXoaMaHang_t4 = new System.Windows.Forms.Button();
             this.txtTenHang_t4 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -105,21 +105,26 @@ namespace QuanLyKhoFashion
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.cboAnh_BienThe_t4 = new System.Windows.Forms.ComboBox();
-            this.cboAnh_Mahang_t4 = new System.Windows.Forms.ComboBox();
-            this.txtAnh_tenHang_t4 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtAnh_Link_t4 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btnAnh_Xoa_t4 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnAnh_ThemSua_t4 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dgvAnh_BienThe_t4 = new System.Windows.Forms.DataGridView();
+            this.btn_CSHL_LoadFile_t4 = new System.Windows.Forms.Button();
+            this.btn_CSHL_ThemSua_t4 = new System.Windows.Forms.Button();
+            this.dgv_ChinhsuaMatHang_HangLoat_t4 = new System.Windows.Forms.DataGridView();
             this.picAnh_Img_t4 = new System.Windows.Forms.PictureBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.btnChonFileBill_t3_Shopee = new System.Windows.Forms.Button();
-            this.btn_Nhapvaohethong_t3_Shopee = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.splitContainer9 = new System.Windows.Forms.SplitContainer();
+            this.dgvNhapHangLoat_t5 = new System.Windows.Forms.DataGridView();
+            this.btn_ChonFile_t5 = new System.Windows.Forms.Button();
+            this.btn_Nhap_t5 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtGiaNhap_t1 = new System.Windows.Forms.TextBox();
+            this.splitContainer10 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer11 = new System.Windows.Forms.SplitContainer();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvListCanLay_t2 = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgvTonKho_t2 = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvLayHang = new System.Windows.Forms.DataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -148,18 +153,13 @@ namespace QuanLyKhoFashion
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangthieu)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho_t2)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListCanLay_t2)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLayHang)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
             this.splitContainer8.Panel1.SuspendLayout();
             this.splitContainer8.Panel2.SuspendLayout();
             this.splitContainer8.SuspendLayout();
             this.groupBox13.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXuLyBill_t3)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -181,9 +181,28 @@ namespace QuanLyKhoFashion
             this.splitContainer7.Panel2.SuspendLayout();
             this.splitContainer7.SuspendLayout();
             this.groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnh_BienThe_t4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ChinhsuaMatHang_HangLoat_t4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh_Img_t4)).BeginInit();
-            this.groupBox8.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
+            this.splitContainer9.Panel1.SuspendLayout();
+            this.splitContainer9.Panel2.SuspendLayout();
+            this.splitContainer9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhapHangLoat_t5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).BeginInit();
+            this.splitContainer10.Panel1.SuspendLayout();
+            this.splitContainer10.Panel2.SuspendLayout();
+            this.splitContainer10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer11)).BeginInit();
+            this.splitContainer11.Panel1.SuspendLayout();
+            this.splitContainer11.Panel2.SuspendLayout();
+            this.splitContainer11.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListCanLay_t2)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho_t2)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLayHang)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -192,6 +211,8 @@ namespace QuanLyKhoFashion
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -230,7 +251,7 @@ namespace QuanLyKhoFashion
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvTonKho);
             this.splitContainer1.Size = new System.Drawing.Size(1501, 567);
-            this.splitContainer1.SplitterDistance = 249;
+            this.splitContainer1.SplitterDistance = 288;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -242,16 +263,17 @@ namespace QuanLyKhoFashion
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.label11);
+            this.splitContainer2.Panel1.Controls.Add(this.txtGiaNhap_t1);
+            this.splitContainer2.Panel1.Controls.Add(this.txtBienThe_t1);
             this.splitContainer2.Panel1.Controls.Add(this.btnXemTonKho_t1);
             this.splitContainer2.Panel1.Controls.Add(this.picMau);
             this.splitContainer2.Panel1.Controls.Add(this.lblStt);
             this.splitContainer2.Panel1.Controls.Add(this.lblSoluongTaiViTri);
-            this.splitContainer2.Panel1.Controls.Add(this.lblSLBienThe);
             this.splitContainer2.Panel1.Controls.Add(this.lblSLHangCungMa);
             this.splitContainer2.Panel1.Controls.Add(this.label6);
             this.splitContainer2.Panel1.Controls.Add(this.txtVitrihientai_t1);
             this.splitContainer2.Panel1.Controls.Add(this.cboVitri_t1);
-            this.splitContainer2.Panel1.Controls.Add(this.cboBienThe_t1);
             this.splitContainer2.Panel1.Controls.Add(this.btnNhaphang_t1);
             this.splitContainer2.Panel1.Controls.Add(this.label5);
             this.splitContainer2.Panel1.Controls.Add(this.label4);
@@ -265,19 +287,28 @@ namespace QuanLyKhoFashion
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(1501, 249);
+            this.splitContainer2.Size = new System.Drawing.Size(1501, 288);
             this.splitContainer2.SplitterDistance = 643;
             this.splitContainer2.TabIndex = 1;
+            // 
+            // txtBienThe_t1
+            // 
+            this.txtBienThe_t1.Location = new System.Drawing.Point(126, 80);
+            this.txtBienThe_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtBienThe_t1.Name = "txtBienThe_t1";
+            this.txtBienThe_t1.ReadOnly = true;
+            this.txtBienThe_t1.Size = new System.Drawing.Size(293, 22);
+            this.txtBienThe_t1.TabIndex = 2;
             // 
             // btnXemTonKho_t1
             // 
             this.btnXemTonKho_t1.BackColor = System.Drawing.Color.Yellow;
             this.btnXemTonKho_t1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemTonKho_t1.Location = new System.Drawing.Point(223, 195);
+            this.btnXemTonKho_t1.Location = new System.Drawing.Point(223, 233);
             this.btnXemTonKho_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnXemTonKho_t1.Name = "btnXemTonKho_t1";
             this.btnXemTonKho_t1.Size = new System.Drawing.Size(74, 49);
-            this.btnXemTonKho_t1.TabIndex = 21;
+            this.btnXemTonKho_t1.TabIndex = 8;
             this.btnXemTonKho_t1.Text = "Xem Tồn Kho";
             this.btnXemTonKho_t1.UseVisualStyleBackColor = false;
             this.btnXemTonKho_t1.Click += new System.EventHandler(this.btnXemTonKho_t1_Click);
@@ -289,7 +320,7 @@ namespace QuanLyKhoFashion
             this.picMau.Location = new System.Drawing.Point(472, 18);
             this.picMau.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.picMau.Name = "picMau";
-            this.picMau.Size = new System.Drawing.Size(169, 205);
+            this.picMau.Size = new System.Drawing.Size(169, 244);
             this.picMau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picMau.TabIndex = 16;
             this.picMau.TabStop = false;
@@ -315,18 +346,6 @@ namespace QuanLyKhoFashion
             this.lblSoluongTaiViTri.TabIndex = 19;
             this.lblSoluongTaiViTri.Text = "0";
             // 
-            // lblSLBienThe
-            // 
-            this.lblSLBienThe.AutoSize = true;
-            this.lblSLBienThe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSLBienThe.ForeColor = System.Drawing.Color.Red;
-            this.lblSLBienThe.Location = new System.Drawing.Point(423, 84);
-            this.lblSLBienThe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSLBienThe.Name = "lblSLBienThe";
-            this.lblSLBienThe.Size = new System.Drawing.Size(15, 16);
-            this.lblSLBienThe.TabIndex = 18;
-            this.lblSLBienThe.Text = "0";
-            // 
             // lblSLHangCungMa
             // 
             this.lblSLHangCungMa.AutoSize = true;
@@ -343,7 +362,7 @@ namespace QuanLyKhoFashion
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 170);
+            this.label6.Location = new System.Drawing.Point(14, 208);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 16);
@@ -352,43 +371,33 @@ namespace QuanLyKhoFashion
             // 
             // txtVitrihientai_t1
             // 
-            this.txtVitrihientai_t1.Location = new System.Drawing.Point(126, 167);
+            this.txtVitrihientai_t1.Location = new System.Drawing.Point(126, 205);
             this.txtVitrihientai_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtVitrihientai_t1.Name = "txtVitrihientai_t1";
             this.txtVitrihientai_t1.ReadOnly = true;
             this.txtVitrihientai_t1.Size = new System.Drawing.Size(293, 22);
-            this.txtVitrihientai_t1.TabIndex = 5;
+            this.txtVitrihientai_t1.TabIndex = 6;
             // 
             // cboVitri_t1
             // 
             this.cboVitri_t1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboVitri_t1.FormattingEnabled = true;
-            this.cboVitri_t1.Location = new System.Drawing.Point(126, 138);
+            this.cboVitri_t1.Location = new System.Drawing.Point(126, 176);
             this.cboVitri_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboVitri_t1.Name = "cboVitri_t1";
             this.cboVitri_t1.Size = new System.Drawing.Size(293, 23);
-            this.cboVitri_t1.TabIndex = 4;
+            this.cboVitri_t1.TabIndex = 5;
             this.cboVitri_t1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboVitri_t1_DrawItem);
             this.cboVitri_t1.TextChanged += new System.EventHandler(this.cboVitri_t1_TextChanged);
-            // 
-            // cboBienThe_t1
-            // 
-            this.cboBienThe_t1.FormattingEnabled = true;
-            this.cboBienThe_t1.Location = new System.Drawing.Point(126, 80);
-            this.cboBienThe_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.cboBienThe_t1.Name = "cboBienThe_t1";
-            this.cboBienThe_t1.Size = new System.Drawing.Size(293, 24);
-            this.cboBienThe_t1.TabIndex = 2;
-            this.cboBienThe_t1.TextChanged += new System.EventHandler(this.cboBienThe_t1_TextChanged);
             // 
             // btnNhaphang_t1
             // 
             this.btnNhaphang_t1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhaphang_t1.Location = new System.Drawing.Point(126, 195);
+            this.btnNhaphang_t1.Location = new System.Drawing.Point(126, 233);
             this.btnNhaphang_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnNhaphang_t1.Name = "btnNhaphang_t1";
             this.btnNhaphang_t1.Size = new System.Drawing.Size(74, 49);
-            this.btnNhaphang_t1.TabIndex = 6;
+            this.btnNhaphang_t1.TabIndex = 7;
             this.btnNhaphang_t1.Text = "Nhập Hàng";
             this.btnNhaphang_t1.UseVisualStyleBackColor = true;
             this.btnNhaphang_t1.Click += new System.EventHandler(this.btnNhaphang_t1_Click);
@@ -397,7 +406,7 @@ namespace QuanLyKhoFashion
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 141);
+            this.label5.Location = new System.Drawing.Point(14, 179);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 16);
@@ -450,6 +459,7 @@ namespace QuanLyKhoFashion
             this.txtTenHang_t1.Location = new System.Drawing.Point(126, 53);
             this.txtTenHang_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTenHang_t1.Name = "txtTenHang_t1";
+            this.txtTenHang_t1.ReadOnly = true;
             this.txtTenHang_t1.Size = new System.Drawing.Size(293, 22);
             this.txtTenHang_t1.TabIndex = 1;
             // 
@@ -487,7 +497,7 @@ namespace QuanLyKhoFashion
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer3.Size = new System.Drawing.Size(854, 249);
+            this.splitContainer3.Size = new System.Drawing.Size(854, 288);
             this.splitContainer3.SplitterDistance = 437;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -499,7 +509,7 @@ namespace QuanLyKhoFashion
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox2.Size = new System.Drawing.Size(437, 249);
+            this.groupBox2.Size = new System.Drawing.Size(437, 288);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hàng tại các vị trí";
@@ -511,7 +521,7 @@ namespace QuanLyKhoFashion
             this.dgvHang.Location = new System.Drawing.Point(2, 18);
             this.dgvHang.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvHang.Name = "dgvHang";
-            this.dgvHang.Size = new System.Drawing.Size(433, 228);
+            this.dgvHang.Size = new System.Drawing.Size(433, 267);
             this.dgvHang.TabIndex = 0;
             // 
             // groupBox1
@@ -522,7 +532,7 @@ namespace QuanLyKhoFashion
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Size = new System.Drawing.Size(413, 249);
+            this.groupBox1.Size = new System.Drawing.Size(413, 288);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vị trí có";
@@ -534,7 +544,7 @@ namespace QuanLyKhoFashion
             this.dgvVitri.Location = new System.Drawing.Point(2, 18);
             this.dgvVitri.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvVitri.Name = "dgvVitri";
-            this.dgvVitri.Size = new System.Drawing.Size(409, 228);
+            this.dgvVitri.Size = new System.Drawing.Size(409, 267);
             this.dgvVitri.TabIndex = 0;
             // 
             // dgvTonKho
@@ -544,7 +554,7 @@ namespace QuanLyKhoFashion
             this.dgvTonKho.Location = new System.Drawing.Point(0, 0);
             this.dgvTonKho.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvTonKho.Name = "dgvTonKho";
-            this.dgvTonKho.Size = new System.Drawing.Size(1501, 314);
+            this.dgvTonKho.Size = new System.Drawing.Size(1501, 275);
             this.dgvTonKho.TabIndex = 1;
             // 
             // tabPage2
@@ -576,9 +586,7 @@ namespace QuanLyKhoFashion
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer4.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer4.Panel2.Controls.Add(this.groupBox3);
+            this.splitContainer4.Panel2.Controls.Add(this.splitContainer10);
             this.splitContainer4.Size = new System.Drawing.Size(1501, 567);
             this.splitContainer4.SplitterDistance = 184;
             this.splitContainer4.TabIndex = 0;
@@ -587,7 +595,7 @@ namespace QuanLyKhoFashion
             // 
             this.btnRestart_t2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnRestart_t2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestart_t2.Location = new System.Drawing.Point(828, 21);
+            this.btnRestart_t2.Location = new System.Drawing.Point(600, 21);
             this.btnRestart_t2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnRestart_t2.Name = "btnRestart_t2";
             this.btnRestart_t2.Size = new System.Drawing.Size(98, 49);
@@ -682,11 +690,11 @@ namespace QuanLyKhoFashion
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.dgvHangthieu);
-            this.groupBox6.Location = new System.Drawing.Point(952, 3);
+            this.groupBox6.Location = new System.Drawing.Point(721, 3);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox6.Size = new System.Drawing.Size(544, 178);
+            this.groupBox6.Size = new System.Drawing.Size(775, 178);
             this.groupBox6.TabIndex = 25;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Hàng Thiếu";
@@ -698,80 +706,8 @@ namespace QuanLyKhoFashion
             this.dgvHangthieu.Location = new System.Drawing.Point(2, 18);
             this.dgvHangthieu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvHangthieu.Name = "dgvHangthieu";
-            this.dgvHangthieu.Size = new System.Drawing.Size(540, 157);
+            this.dgvHangthieu.Size = new System.Drawing.Size(771, 157);
             this.dgvHangthieu.TabIndex = 0;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.dgvTonKho_t2);
-            this.groupBox5.Location = new System.Drawing.Point(1204, -239);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox5.Size = new System.Drawing.Size(294, 615);
-            this.groupBox5.TabIndex = 2;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Tồn Kho";
-            // 
-            // dgvTonKho_t2
-            // 
-            this.dgvTonKho_t2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTonKho_t2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTonKho_t2.Location = new System.Drawing.Point(2, 18);
-            this.dgvTonKho_t2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvTonKho_t2.Name = "dgvTonKho_t2";
-            this.dgvTonKho_t2.Size = new System.Drawing.Size(290, 594);
-            this.dgvTonKho_t2.TabIndex = 26;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.dgvListCanLay_t2);
-            this.groupBox4.Location = new System.Drawing.Point(769, -239);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox4.Size = new System.Drawing.Size(431, 615);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "List cần lấy";
-            // 
-            // dgvListCanLay_t2
-            // 
-            this.dgvListCanLay_t2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListCanLay_t2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvListCanLay_t2.Location = new System.Drawing.Point(2, 18);
-            this.dgvListCanLay_t2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvListCanLay_t2.Name = "dgvListCanLay_t2";
-            this.dgvListCanLay_t2.Size = new System.Drawing.Size(427, 594);
-            this.dgvListCanLay_t2.TabIndex = 27;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.dgvLayHang);
-            this.groupBox3.Location = new System.Drawing.Point(5, -239);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox3.Size = new System.Drawing.Size(760, 615);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Vị trí, số lượng hàng sẽ lấy";
-            // 
-            // dgvLayHang
-            // 
-            this.dgvLayHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLayHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvLayHang.Location = new System.Drawing.Point(2, 18);
-            this.dgvLayHang.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvLayHang.Name = "dgvLayHang";
-            this.dgvLayHang.Size = new System.Drawing.Size(756, 594);
-            this.dgvLayHang.TabIndex = 24;
             // 
             // tabPage3
             // 
@@ -815,6 +751,45 @@ namespace QuanLyKhoFashion
             this.groupBox13.Size = new System.Drawing.Size(1501, 163);
             this.groupBox13.TabIndex = 31;
             this.groupBox13.TabStop = false;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox8.Controls.Add(this.btnChonFileBill_t3_Shopee);
+            this.groupBox8.Controls.Add(this.btn_Nhapvaohethong_t3_Shopee);
+            this.groupBox8.Location = new System.Drawing.Point(309, 3);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(297, 160);
+            this.groupBox8.TabIndex = 35;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Shopee";
+            // 
+            // btnChonFileBill_t3_Shopee
+            // 
+            this.btnChonFileBill_t3_Shopee.BackColor = System.Drawing.Color.Lime;
+            this.btnChonFileBill_t3_Shopee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonFileBill_t3_Shopee.Location = new System.Drawing.Point(15, 34);
+            this.btnChonFileBill_t3_Shopee.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnChonFileBill_t3_Shopee.Name = "btnChonFileBill_t3_Shopee";
+            this.btnChonFileBill_t3_Shopee.Size = new System.Drawing.Size(95, 49);
+            this.btnChonFileBill_t3_Shopee.TabIndex = 30;
+            this.btnChonFileBill_t3_Shopee.Text = "Chọn File Bill";
+            this.btnChonFileBill_t3_Shopee.UseVisualStyleBackColor = false;
+            this.btnChonFileBill_t3_Shopee.Click += new System.EventHandler(this.btnChonFileBill_t3_Shopee_Click);
+            // 
+            // btn_Nhapvaohethong_t3_Shopee
+            // 
+            this.btn_Nhapvaohethong_t3_Shopee.BackColor = System.Drawing.Color.Red;
+            this.btn_Nhapvaohethong_t3_Shopee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Nhapvaohethong_t3_Shopee.Location = new System.Drawing.Point(152, 34);
+            this.btn_Nhapvaohethong_t3_Shopee.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_Nhapvaohethong_t3_Shopee.Name = "btn_Nhapvaohethong_t3_Shopee";
+            this.btn_Nhapvaohethong_t3_Shopee.Size = new System.Drawing.Size(114, 49);
+            this.btn_Nhapvaohethong_t3_Shopee.TabIndex = 33;
+            this.btn_Nhapvaohethong_t3_Shopee.Text = "Nhập Bill vào Hệ Thống";
+            this.btn_Nhapvaohethong_t3_Shopee.UseVisualStyleBackColor = false;
+            this.btn_Nhapvaohethong_t3_Shopee.Click += new System.EventHandler(this.btn_Nhapvaohethong_t3_Shopee_Click);
             // 
             // groupBox14
             // 
@@ -998,6 +973,10 @@ namespace QuanLyKhoFashion
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.txtBienThe_t4);
+            this.groupBox10.Controls.Add(this.label2);
+            this.groupBox10.Controls.Add(this.label15);
+            this.groupBox10.Controls.Add(this.txtLinkAnh_t4);
             this.groupBox10.Controls.Add(this.btnXoaMaHang_t4);
             this.groupBox10.Controls.Add(this.txtTenHang_t4);
             this.groupBox10.Controls.Add(this.label9);
@@ -1013,9 +992,42 @@ namespace QuanLyKhoFashion
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Mã Hàng";
             // 
+            // txtBienThe_t4
+            // 
+            this.txtBienThe_t4.Location = new System.Drawing.Point(88, 77);
+            this.txtBienThe_t4.Name = "txtBienThe_t4";
+            this.txtBienThe_t4.Size = new System.Drawing.Size(212, 22);
+            this.txtBienThe_t4.TabIndex = 32;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 16);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Link:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(18, 80);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 16);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Biến thể:";
+            // 
+            // txtLinkAnh_t4
+            // 
+            this.txtLinkAnh_t4.Location = new System.Drawing.Point(89, 107);
+            this.txtLinkAnh_t4.Name = "txtLinkAnh_t4";
+            this.txtLinkAnh_t4.Size = new System.Drawing.Size(212, 22);
+            this.txtLinkAnh_t4.TabIndex = 19;
+            this.txtLinkAnh_t4.Leave += new System.EventHandler(this.txtLinkAnh_t4_Leave);
+            // 
             // btnXoaMaHang_t4
             // 
-            this.btnXoaMaHang_t4.Location = new System.Drawing.Point(226, 91);
+            this.btnXoaMaHang_t4.Location = new System.Drawing.Point(226, 165);
             this.btnXoaMaHang_t4.Name = "btnXoaMaHang_t4";
             this.btnXoaMaHang_t4.Size = new System.Drawing.Size(75, 23);
             this.btnXoaMaHang_t4.TabIndex = 3;
@@ -1041,7 +1053,7 @@ namespace QuanLyKhoFashion
             // 
             // btn_ThemSuaMaHang_t4
             // 
-            this.btn_ThemSuaMaHang_t4.Location = new System.Drawing.Point(89, 91);
+            this.btn_ThemSuaMaHang_t4.Location = new System.Drawing.Point(89, 165);
             this.btn_ThemSuaMaHang_t4.Name = "btn_ThemSuaMaHang_t4";
             this.btn_ThemSuaMaHang_t4.Size = new System.Drawing.Size(81, 23);
             this.btn_ThemSuaMaHang_t4.TabIndex = 2;
@@ -1087,7 +1099,7 @@ namespace QuanLyKhoFashion
             this.groupBox11.Size = new System.Drawing.Size(887, 563);
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Biến thể / Ảnh";
+            this.groupBox11.Text = "Chỉnh sửa hàng loạt";
             // 
             // splitContainer7
             // 
@@ -1109,17 +1121,9 @@ namespace QuanLyKhoFashion
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.cboAnh_BienThe_t4);
-            this.groupBox12.Controls.Add(this.cboAnh_Mahang_t4);
-            this.groupBox12.Controls.Add(this.txtAnh_tenHang_t4);
-            this.groupBox12.Controls.Add(this.label14);
-            this.groupBox12.Controls.Add(this.txtAnh_Link_t4);
-            this.groupBox12.Controls.Add(this.label13);
-            this.groupBox12.Controls.Add(this.btnAnh_Xoa_t4);
-            this.groupBox12.Controls.Add(this.label11);
-            this.groupBox12.Controls.Add(this.btnAnh_ThemSua_t4);
-            this.groupBox12.Controls.Add(this.label12);
-            this.groupBox12.Controls.Add(this.dgvAnh_BienThe_t4);
+            this.groupBox12.Controls.Add(this.btn_CSHL_LoadFile_t4);
+            this.groupBox12.Controls.Add(this.btn_CSHL_ThemSua_t4);
+            this.groupBox12.Controls.Add(this.dgv_ChinhsuaMatHang_HangLoat_t4);
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox12.Location = new System.Drawing.Point(0, 0);
             this.groupBox12.Name = "groupBox12";
@@ -1127,106 +1131,37 @@ namespace QuanLyKhoFashion
             this.groupBox12.TabIndex = 0;
             this.groupBox12.TabStop = false;
             // 
-            // cboAnh_BienThe_t4
+            // btn_CSHL_LoadFile_t4
             // 
-            this.cboAnh_BienThe_t4.FormattingEnabled = true;
-            this.cboAnh_BienThe_t4.Location = new System.Drawing.Point(82, 68);
-            this.cboAnh_BienThe_t4.Name = "cboAnh_BienThe_t4";
-            this.cboAnh_BienThe_t4.Size = new System.Drawing.Size(255, 24);
-            this.cboAnh_BienThe_t4.TabIndex = 2;
+            this.btn_CSHL_LoadFile_t4.Location = new System.Drawing.Point(22, 27);
+            this.btn_CSHL_LoadFile_t4.Name = "btn_CSHL_LoadFile_t4";
+            this.btn_CSHL_LoadFile_t4.Size = new System.Drawing.Size(81, 23);
+            this.btn_CSHL_LoadFile_t4.TabIndex = 23;
+            this.btn_CSHL_LoadFile_t4.Text = "Load File";
+            this.btn_CSHL_LoadFile_t4.UseVisualStyleBackColor = true;
+            this.btn_CSHL_LoadFile_t4.Click += new System.EventHandler(this.btn_CSHL_LoadFile_t4_Click);
             // 
-            // cboAnh_Mahang_t4
+            // btn_CSHL_ThemSua_t4
             // 
-            this.cboAnh_Mahang_t4.FormattingEnabled = true;
-            this.cboAnh_Mahang_t4.Location = new System.Drawing.Point(82, 14);
-            this.cboAnh_Mahang_t4.Name = "cboAnh_Mahang_t4";
-            this.cboAnh_Mahang_t4.Size = new System.Drawing.Size(255, 24);
-            this.cboAnh_Mahang_t4.TabIndex = 0;
+            this.btn_CSHL_ThemSua_t4.Location = new System.Drawing.Point(22, 73);
+            this.btn_CSHL_ThemSua_t4.Name = "btn_CSHL_ThemSua_t4";
+            this.btn_CSHL_ThemSua_t4.Size = new System.Drawing.Size(81, 23);
+            this.btn_CSHL_ThemSua_t4.TabIndex = 4;
+            this.btn_CSHL_ThemSua_t4.Text = "Thêm/Sửa";
+            this.btn_CSHL_ThemSua_t4.UseVisualStyleBackColor = true;
+            this.btn_CSHL_ThemSua_t4.Click += new System.EventHandler(this.btn_CSHL_ThemSua_t4_Click);
             // 
-            // txtAnh_tenHang_t4
+            // dgv_ChinhsuaMatHang_HangLoat_t4
             // 
-            this.txtAnh_tenHang_t4.Location = new System.Drawing.Point(82, 42);
-            this.txtAnh_tenHang_t4.Name = "txtAnh_tenHang_t4";
-            this.txtAnh_tenHang_t4.ReadOnly = true;
-            this.txtAnh_tenHang_t4.Size = new System.Drawing.Size(255, 22);
-            this.txtAnh_tenHang_t4.TabIndex = 1;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 45);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 16);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Tên hàng:";
-            // 
-            // txtAnh_Link_t4
-            // 
-            this.txtAnh_Link_t4.Location = new System.Drawing.Point(82, 98);
-            this.txtAnh_Link_t4.Name = "txtAnh_Link_t4";
-            this.txtAnh_Link_t4.Size = new System.Drawing.Size(255, 22);
-            this.txtAnh_Link_t4.TabIndex = 3;
-            this.txtAnh_Link_t4.Leave += new System.EventHandler(this.txtAnh_Link_t4_Leave);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(7, 101);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(34, 16);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Link:";
-            // 
-            // btnAnh_Xoa_t4
-            // 
-            this.btnAnh_Xoa_t4.Location = new System.Drawing.Point(219, 143);
-            this.btnAnh_Xoa_t4.Name = "btnAnh_Xoa_t4";
-            this.btnAnh_Xoa_t4.Size = new System.Drawing.Size(75, 23);
-            this.btnAnh_Xoa_t4.TabIndex = 5;
-            this.btnAnh_Xoa_t4.Text = "Xóa";
-            this.btnAnh_Xoa_t4.UseVisualStyleBackColor = true;
-            this.btnAnh_Xoa_t4.Click += new System.EventHandler(this.btnAnh_Xoa_t4_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 73);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 16);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Biến thể:";
-            // 
-            // btnAnh_ThemSua_t4
-            // 
-            this.btnAnh_ThemSua_t4.Location = new System.Drawing.Point(82, 143);
-            this.btnAnh_ThemSua_t4.Name = "btnAnh_ThemSua_t4";
-            this.btnAnh_ThemSua_t4.Size = new System.Drawing.Size(81, 23);
-            this.btnAnh_ThemSua_t4.TabIndex = 4;
-            this.btnAnh_ThemSua_t4.Text = "Thêm/Sửa";
-            this.btnAnh_ThemSua_t4.UseVisualStyleBackColor = true;
-            this.btnAnh_ThemSua_t4.Click += new System.EventHandler(this.btnAnh_ThemSua_t4_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 17);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 16);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Mã hàng:";
-            // 
-            // dgvAnh_BienThe_t4
-            // 
-            this.dgvAnh_BienThe_t4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_ChinhsuaMatHang_HangLoat_t4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAnh_BienThe_t4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnh_BienThe_t4.Location = new System.Drawing.Point(389, 14);
-            this.dgvAnh_BienThe_t4.Name = "dgvAnh_BienThe_t4";
-            this.dgvAnh_BienThe_t4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAnh_BienThe_t4.Size = new System.Drawing.Size(485, 253);
-            this.dgvAnh_BienThe_t4.TabIndex = 22;
-            this.dgvAnh_BienThe_t4.SelectionChanged += new System.EventHandler(this.dgvAnh_Link_t4_SelectionChanged);
+            this.dgv_ChinhsuaMatHang_HangLoat_t4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ChinhsuaMatHang_HangLoat_t4.Location = new System.Drawing.Point(328, 14);
+            this.dgv_ChinhsuaMatHang_HangLoat_t4.Name = "dgv_ChinhsuaMatHang_HangLoat_t4";
+            this.dgv_ChinhsuaMatHang_HangLoat_t4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ChinhsuaMatHang_HangLoat_t4.Size = new System.Drawing.Size(546, 253);
+            this.dgv_ChinhsuaMatHang_HangLoat_t4.TabIndex = 22;
             // 
             // picAnh_Img_t4
             // 
@@ -1237,42 +1172,197 @@ namespace QuanLyKhoFashion
             this.picAnh_Img_t4.TabIndex = 0;
             this.picAnh_Img_t4.TabStop = false;
             // 
-            // groupBox8
+            // tabPage5
             // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox8.Controls.Add(this.btnChonFileBill_t3_Shopee);
-            this.groupBox8.Controls.Add(this.btn_Nhapvaohethong_t3_Shopee);
-            this.groupBox8.Location = new System.Drawing.Point(309, 3);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(297, 160);
-            this.groupBox8.TabIndex = 35;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Shopee";
+            this.tabPage5.Controls.Add(this.splitContainer9);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1505, 573);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Nhập Hàng Loạt";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // btnChonFileBill_t3_Shopee
+            // splitContainer9
             // 
-            this.btnChonFileBill_t3_Shopee.BackColor = System.Drawing.Color.Lime;
-            this.btnChonFileBill_t3_Shopee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonFileBill_t3_Shopee.Location = new System.Drawing.Point(15, 34);
-            this.btnChonFileBill_t3_Shopee.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnChonFileBill_t3_Shopee.Name = "btnChonFileBill_t3_Shopee";
-            this.btnChonFileBill_t3_Shopee.Size = new System.Drawing.Size(95, 49);
-            this.btnChonFileBill_t3_Shopee.TabIndex = 30;
-            this.btnChonFileBill_t3_Shopee.Text = "Chọn File Bill";
-            this.btnChonFileBill_t3_Shopee.UseVisualStyleBackColor = false;
+            this.splitContainer9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer9.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer9.Name = "splitContainer9";
             // 
-            // btn_Nhapvaohethong_t3_Shopee
+            // splitContainer9.Panel1
             // 
-            this.btn_Nhapvaohethong_t3_Shopee.BackColor = System.Drawing.Color.Red;
-            this.btn_Nhapvaohethong_t3_Shopee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Nhapvaohethong_t3_Shopee.Location = new System.Drawing.Point(152, 34);
-            this.btn_Nhapvaohethong_t3_Shopee.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_Nhapvaohethong_t3_Shopee.Name = "btn_Nhapvaohethong_t3_Shopee";
-            this.btn_Nhapvaohethong_t3_Shopee.Size = new System.Drawing.Size(114, 49);
-            this.btn_Nhapvaohethong_t3_Shopee.TabIndex = 33;
-            this.btn_Nhapvaohethong_t3_Shopee.Text = "Nhập Bill vào Hệ Thống";
-            this.btn_Nhapvaohethong_t3_Shopee.UseVisualStyleBackColor = false;
+            this.splitContainer9.Panel1.Controls.Add(this.btn_Nhap_t5);
+            this.splitContainer9.Panel1.Controls.Add(this.btn_ChonFile_t5);
+            // 
+            // splitContainer9.Panel2
+            // 
+            this.splitContainer9.Panel2.Controls.Add(this.dgvNhapHangLoat_t5);
+            this.splitContainer9.Size = new System.Drawing.Size(1499, 567);
+            this.splitContainer9.SplitterDistance = 499;
+            this.splitContainer9.TabIndex = 0;
+            // 
+            // dgvNhapHangLoat_t5
+            // 
+            this.dgvNhapHangLoat_t5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhapHangLoat_t5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNhapHangLoat_t5.Location = new System.Drawing.Point(0, 0);
+            this.dgvNhapHangLoat_t5.Name = "dgvNhapHangLoat_t5";
+            this.dgvNhapHangLoat_t5.Size = new System.Drawing.Size(996, 567);
+            this.dgvNhapHangLoat_t5.TabIndex = 0;
+            // 
+            // btn_ChonFile_t5
+            // 
+            this.btn_ChonFile_t5.Location = new System.Drawing.Point(30, 25);
+            this.btn_ChonFile_t5.Name = "btn_ChonFile_t5";
+            this.btn_ChonFile_t5.Size = new System.Drawing.Size(75, 23);
+            this.btn_ChonFile_t5.TabIndex = 0;
+            this.btn_ChonFile_t5.Text = "Chọn File";
+            this.btn_ChonFile_t5.UseVisualStyleBackColor = true;
+            this.btn_ChonFile_t5.Click += new System.EventHandler(this.btn_ChonFile_t5_Click);
+            // 
+            // btn_Nhap_t5
+            // 
+            this.btn_Nhap_t5.Location = new System.Drawing.Point(30, 67);
+            this.btn_Nhap_t5.Name = "btn_Nhap_t5";
+            this.btn_Nhap_t5.Size = new System.Drawing.Size(75, 23);
+            this.btn_Nhap_t5.TabIndex = 1;
+            this.btn_Nhap_t5.Text = "Nhập Hàng";
+            this.btn_Nhap_t5.UseVisualStyleBackColor = true;
+            this.btn_Nhap_t5.Click += new System.EventHandler(this.btn_Nhap_t5_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(14, 146);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 16);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Giá Nhập:";
+            // 
+            // txtGiaNhap_t1
+            // 
+            this.txtGiaNhap_t1.Location = new System.Drawing.Point(126, 142);
+            this.txtGiaNhap_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtGiaNhap_t1.Name = "txtGiaNhap_t1";
+            this.txtGiaNhap_t1.Size = new System.Drawing.Size(293, 22);
+            this.txtGiaNhap_t1.TabIndex = 4;
+            this.txtGiaNhap_t1.Text = "0";
+            // 
+            // splitContainer10
+            // 
+            this.splitContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer10.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer10.Name = "splitContainer10";
+            // 
+            // splitContainer10.Panel1
+            // 
+            this.splitContainer10.Panel1.Controls.Add(this.splitContainer11);
+            // 
+            // splitContainer10.Panel2
+            // 
+            this.splitContainer10.Panel2.Controls.Add(this.groupBox5);
+            this.splitContainer10.Size = new System.Drawing.Size(1501, 379);
+            this.splitContainer10.SplitterDistance = 761;
+            this.splitContainer10.TabIndex = 0;
+            // 
+            // splitContainer11
+            // 
+            this.splitContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer11.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer11.Name = "splitContainer11";
+            this.splitContainer11.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer11.Panel1
+            // 
+            this.splitContainer11.Panel1.Controls.Add(this.groupBox3);
+            // 
+            // splitContainer11.Panel2
+            // 
+            this.splitContainer11.Panel2.Controls.Add(this.groupBox4);
+            this.splitContainer11.Size = new System.Drawing.Size(761, 379);
+            this.splitContainer11.SplitterDistance = 176;
+            this.splitContainer11.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dgvListCanLay_t2);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox4.Size = new System.Drawing.Size(761, 199);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "List cần lấy";
+            // 
+            // dgvListCanLay_t2
+            // 
+            this.dgvListCanLay_t2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListCanLay_t2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvListCanLay_t2.Location = new System.Drawing.Point(2, 18);
+            this.dgvListCanLay_t2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvListCanLay_t2.Name = "dgvListCanLay_t2";
+            this.dgvListCanLay_t2.Size = new System.Drawing.Size(757, 178);
+            this.dgvListCanLay_t2.TabIndex = 27;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dgvTonKho_t2);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox5.Size = new System.Drawing.Size(736, 379);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Tồn Kho";
+            // 
+            // dgvTonKho_t2
+            // 
+            this.dgvTonKho_t2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTonKho_t2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTonKho_t2.Location = new System.Drawing.Point(2, 18);
+            this.dgvTonKho_t2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvTonKho_t2.Name = "dgvTonKho_t2";
+            this.dgvTonKho_t2.Size = new System.Drawing.Size(732, 358);
+            this.dgvTonKho_t2.TabIndex = 26;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvLayHang);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox3.Size = new System.Drawing.Size(761, 176);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Vị trí, số lượng hàng sẽ lấy";
+            // 
+            // dgvLayHang
+            // 
+            this.dgvLayHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLayHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLayHang.Location = new System.Drawing.Point(2, 18);
+            this.dgvLayHang.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvLayHang.Name = "dgvLayHang";
+            this.dgvLayHang.Size = new System.Drawing.Size(757, 155);
+            this.dgvLayHang.TabIndex = 24;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1505, 573);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Bán Buôn";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1315,18 +1405,13 @@ namespace QuanLyKhoFashion
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangthieu)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho_t2)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListCanLay_t2)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLayHang)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.splitContainer8.Panel1.ResumeLayout(false);
             this.splitContainer8.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).EndInit();
             this.splitContainer8.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvXuLyBill_t3)).EndInit();
             this.tabPage4.ResumeLayout(false);
@@ -1350,10 +1435,28 @@ namespace QuanLyKhoFashion
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
             this.splitContainer7.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnh_BienThe_t4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ChinhsuaMatHang_HangLoat_t4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh_Img_t4)).EndInit();
-            this.groupBox8.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.splitContainer9.Panel1.ResumeLayout(false);
+            this.splitContainer9.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
+            this.splitContainer9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhapHangLoat_t5)).EndInit();
+            this.splitContainer10.Panel1.ResumeLayout(false);
+            this.splitContainer10.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).EndInit();
+            this.splitContainer10.ResumeLayout(false);
+            this.splitContainer11.Panel1.ResumeLayout(false);
+            this.splitContainer11.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer11)).EndInit();
+            this.splitContainer11.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListCanLay_t2)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho_t2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLayHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1367,13 +1470,11 @@ namespace QuanLyKhoFashion
         private System.Windows.Forms.Button btnXemTonKho_t1;
         private System.Windows.Forms.Label lblStt;
         private System.Windows.Forms.Label lblSoluongTaiViTri;
-        private System.Windows.Forms.Label lblSLBienThe;
         private System.Windows.Forms.Label lblSLHangCungMa;
         private System.Windows.Forms.PictureBox picMau;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtVitrihientai_t1;
         private System.Windows.Forms.ComboBox cboVitri_t1;
-        private System.Windows.Forms.ComboBox cboBienThe_t1;
         private System.Windows.Forms.Button btnNhaphang_t1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -1391,12 +1492,6 @@ namespace QuanLyKhoFashion
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dgvTonKho;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dgvTonKho_t2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dgvListCanLay_t2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvLayHang;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dgvHangthieu;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -1427,18 +1522,9 @@ namespace QuanLyKhoFashion
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.SplitContainer splitContainer7;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox txtAnh_Link_t4;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btnAnh_Xoa_t4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnAnh_ThemSua_t4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dgvAnh_BienThe_t4;
+        private System.Windows.Forms.Button btn_CSHL_ThemSua_t4;
+        private System.Windows.Forms.DataGridView dgv_ChinhsuaMatHang_HangLoat_t4;
         private System.Windows.Forms.PictureBox picAnh_Img_t4;
-        private System.Windows.Forms.TextBox txtAnh_tenHang_t4;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cboAnh_BienThe_t4;
-        private System.Windows.Forms.ComboBox cboAnh_Mahang_t4;
         private System.Windows.Forms.SplitContainer splitContainer8;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Button btn_NhapvaohethongTiktok_t3;
@@ -1450,6 +1536,28 @@ namespace QuanLyKhoFashion
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button btnChonFileBill_t3_Shopee;
         private System.Windows.Forms.Button btn_Nhapvaohethong_t3_Shopee;
+        private System.Windows.Forms.TextBox txtBienThe_t1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtLinkAnh_t4;
+        private System.Windows.Forms.TextBox txtBienThe_t4;
+        private System.Windows.Forms.Button btn_CSHL_LoadFile_t4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.SplitContainer splitContainer9;
+        private System.Windows.Forms.DataGridView dgvNhapHangLoat_t5;
+        private System.Windows.Forms.Button btn_Nhap_t5;
+        private System.Windows.Forms.Button btn_ChonFile_t5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtGiaNhap_t1;
+        private System.Windows.Forms.SplitContainer splitContainer10;
+        private System.Windows.Forms.SplitContainer splitContainer11;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dgvLayHang;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dgvListCanLay_t2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView dgvTonKho_t2;
+        private System.Windows.Forms.TabPage tabPage6;
     }
 }
 

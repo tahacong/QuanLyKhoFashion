@@ -17,6 +17,7 @@ using OfficeOpenXml;
 using System.IO;
 using System.Diagnostics;
 using static OfficeOpenXml.ExcelErrorValue;
+using QuanLyKhoFashion.fashionwhDataSetTableAdapters;
 
 namespace QuanLyKhoFashion
 {
@@ -163,7 +164,6 @@ namespace QuanLyKhoFashion
 
             CauHinhBanDau();
             TruyvanSQL.HienThiLenCBO("mavitri", cboVitri_t1, "bangvitri");
-            TruyvanSQL.HienThiLenCBO("bienthe", cboBienThe_t1, "bienthe");
 
             XemTonKho(dgvTonKho);
             AdjustColumnWidths(dgvTonKho);
@@ -172,26 +172,19 @@ namespace QuanLyKhoFashion
             //Tab 4 cài đặt
             LoadVitri();
             LoadMatHang();
-            LoadLinkAnh();
-            TruyvanSQL.HienThiLenCBO("mahang", cboAnh_Mahang_t4, "mathang");
-            TruyvanSQL.HienThiLenCBO("bienthe", cboAnh_BienThe_t4, "bienthe");
         }
         private void btnNhaphang_t1_Click(object sender, EventArgs e)
         {
             //TruyvanSQL.KiemTraTonTaiGiaTriTrongBang("bangvitri", "mavitri",cboVitri_t1.Text)
-            if (txtMaSKU_t1.Text != "" && cboBienThe_t1.Text != "" && txtSoLuong_t1.Text != "" && cboVitri_t1.Text != "")
+            if (txtMaSKU_t1.Text != "" && txtSoLuong_t1.Text != "" && cboVitri_t1.Text != "")
             {
                 if (TruyvanSQL.KiemTraTonTaiGiaTriTrongBang("bangvitri", "mavitri", cboVitri_t1.Text))
                 {
                     if (TruyvanSQL.KiemTraTonTaiGiaTriTrongBang("mathang", "mahang", txtMaSKU_t1.Text))
                     {
-                        if (TruyvanSQL.KiemTraTonTaiGiaTriTrongBangPlus("bienthe", "bienthe=N'" + cboBienThe_t1.Text + "' AND mahang='" + txtMaSKU_t1.Text + "'")) 
-                        {
-                            TruyvanSQL.NhapHang(cboVitri_t1.Text, txtMaSKU_t1.Text, cboBienThe_t1.Text, Convert.ToInt32(txtSoLuong_t1.Text));
-                            MessageBox.Show($"Nhập thành công {txtSoLuong_t1.Text} {txtTenHang_t1.Text} (mã {txtMaSKU_t1.Text}) size {cboBienThe_t1.Text} vào vị trí {cboVitri_t1.Text}");
-                            ThayDoiTrangThaiStatus(true);
-                        }
-                        else { MessageBox.Show("biến không có trong bảng"); ThayDoiTrangThaiStatus(false); }
+                        TruyvanSQL.NhapHang(cboVitri_t1.Text, txtMaSKU_t1.Text, Convert.ToInt32(txtSoLuong_t1.Text), Convert.ToInt32(txtGiaNhap_t1.Text));
+                        MessageBox.Show($"Nhập thành công {txtSoLuong_t1.Text} {txtTenHang_t1.Text} (mã {txtMaSKU_t1.Text}) -  {txtBienThe_t1.Text} vào vị trí {cboVitri_t1.Text}");
+                        ThayDoiTrangThaiStatus(true);
                     }
                     else { MessageBox.Show("Mã hàng SKU không tồn tại"); ThayDoiTrangThaiStatus(false); }
                 }
@@ -204,12 +197,6 @@ namespace QuanLyKhoFashion
             lblSoluongTaiViTri.Text = Convert.ToString(TruyvanSQL.HangTonKho("vitri='" + cboVitri_t1.Text + "'"));
             TruyvanSQL.LoadDataDGV(dgvVitri, $"vitri = '{cboVitri_t1.Text}'");
             AdjustColumnWidths(dgvVitri);
-        }
-        private void cboBienThe_t1_TextChanged(object sender, EventArgs e)
-        {
-            lblSLBienThe.Text = Convert.ToString(TruyvanSQL.HangTonKho("mahang='" + txtMaSKU_t1.Text + "' AND bienthe=N'" + cboBienThe_t1.Text + "'"));
-            picMau.Image = null;
-            ThaoTac.LoadImageFromURL(picMau, TruyvanSQL.LoadSqltoString($"SELECT [linkanh] FROM [bienthe] WHERE mahang='{txtMaSKU_t1.Text}' AND bienthe=N'{cboBienThe_t1.Text}'"));
         }
         private void ThayDoiTrangThaiStatus(bool trueorfalse)
         {
@@ -225,14 +212,13 @@ namespace QuanLyKhoFashion
         }
         private void txtMaSKU_t1_Leave(object sender, EventArgs e)
         {
-            //Hiển thị các biến thể đang có của mã hàng
-            TruyvanSQL.HienThiLenCBO_CoDieuKien("bienthe", cboBienThe_t1, "bienthe", "mahang='" + txtMaSKU_t1.Text + "'");
             //Hiển thị ảnh minh họa
             picMau.Image = null;
-            ThaoTac.LoadImageFromURL(picMau, TruyvanSQL.LoadSqltoString($"SELECT [linkanh] FROM [bienthe] WHERE mahang='{txtMaSKU_t1.Text}' AND bienthe=N'{cboBienThe_t1.Text}'"));
+            ThaoTac.LoadImageFromURL(picMau, TruyvanSQL.LoadSqltoString($"SELECT [linkanh] FROM [mathang] WHERE mahang='{txtMaSKU_t1.Text}'"));
             //Hiển thị tên sản phẩm
             txtTenHang_t1.Text = TruyvanSQL.LoadSqltoString($"SELECT [tenhang] FROM [mathang] WHERE mahang='{txtMaSKU_t1.Text}'");
-
+            //Hiển thị Biến thể
+            txtBienThe_t1.Text = TruyvanSQL.LoadSqltoString($"SELECT [bienthe] FROM [mathang] WHERE mahang='{txtMaSKU_t1.Text}'");
             //truy vấn hiển thị dữ liệu lên dgvHang
             TruyvanSQL.LoadDataDGV(dgvHang, $"lichsu.mahang='{txtMaSKU_t1.Text}'");
             AdjustColumnWidths(dgvHang);
@@ -290,12 +276,12 @@ namespace QuanLyKhoFashion
                  $"GROUP BY lichsu.mahang, mathang.tenhang, lichsu.bienthe, lichsu.vitri" +
                  $"HAVING SUM(CASE WHEN trangthai = 'in' THEN soluong ELSE -soluong END) <> 0"; // Thêm điều kiện HAVING
                 */
-                string command = "SELECT lichsu.mahang, mathang.tenhang, lichsu.bienthe, " +
+                string command = "SELECT lichsu.mahang, mathang.tenhang, mathang.bienthe, " +
                     "SUM(CASE WHEN trangthai = 'in' THEN soluong ELSE -soluong END) AS soluong_tonkho, " +
                     "lichsu.vitri " +
                     "FROM lichsu " +
                     "LEFT JOIN mathang ON lichsu.mahang = mathang.mahang " +
-                    "GROUP BY lichsu.mahang, mathang.tenhang, lichsu.bienthe, lichsu.vitri " +
+                    "GROUP BY lichsu.mahang, mathang.tenhang, mathang.bienthe, lichsu.vitri " +
                     "HAVING SUM(CASE WHEN trangthai = 'in' THEN soluong ELSE -soluong END) <> 0";
                 SqlCommand cmd = new SqlCommand(command, Ketnoi);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -327,39 +313,35 @@ namespace QuanLyKhoFashion
             {
                 using (var package = new ExcelPackage(new FileInfo(openFileDialog.FileName)))
                 {
-                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
-                    DataTable dt = new DataTable();
-                    foreach (var firstRowCell in worksheet.Cells[1, 1, 1, worksheet.Dimension.End.Column])
-                    {
-                        dt.Columns.Add(firstRowCell.Text);
-                    }
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0]; // Lấy worksheet đầu tiên
 
-                    for (int rowNumber = 2; rowNumber <= worksheet.Dimension.End.Row; rowNumber++)
+                    List<HangHoa> hangHoas = new List<HangHoa>();
+
+                    for (int row = 2; row <= worksheet.Dimension.End.Row; row++)
                     {
-                        var row = worksheet.Cells[rowNumber, 1, rowNumber, worksheet.Dimension.End.Column];
-                        var newRow = dt.NewRow();
-                        foreach (var cell in row)
+                        HangHoa hangHoa = new HangHoa
                         {
-                            newRow[cell.Start.Column - 1] = cell.Text;
-                        }
-                        dt.Rows.Add(newRow);
+                            MaHang = worksheet.Cells[row, 1].Value.ToString(),
+                            TenHang = worksheet.Cells[row, 2].Value.ToString(),
+                            BienThe = worksheet.Cells[row, 3].Value.ToString(),
+                            SoLuong = int.Parse(worksheet.Cells[row, 4].Value.ToString()),
+                            VanDon = worksheet.Cells[row, 5].Value.ToString()
+                        };
+                        hangHoas.Add(hangHoa);
                     }
 
-                    // Tính tổng theo mã và size và hiển thị kết quả lên DataGridView
-                    var groupedData = dt.AsEnumerable()
-                                        .GroupBy(row => new { MaHang = row.Field<string>("mahang"), BienThe = row.Field<string>("bienthe") })
-                                        .Select(group => new
-                                        {
-                                            MaHang = group.Key.MaHang,
-                                            BienThe = group.Key.BienThe,
-                                            TongSoLuong = group.Sum(row => Convert.ToInt32(row["soluong"]))
-                                        })
-                                        .ToList();
-                    // Sắp xếp theo mã hàng và size theo thứ tự ưu tiên
-                    var sortedData = groupedData.OrderBy(item => item.MaHang)
-                                                .ToList();
+                    // Tính tổng theo mã hàng và lưu vào danh sách HangHoaTong
+                    var tongSoLuongTheoMaHang = hangHoas.GroupBy(x => x.MaHang)
+                        .Select(group => new HangHoaTong
+                        {
+                            MaHang = group.Key,
+                            TenHang = group.First().TenHang,
+                            BienThe = group.First().BienThe,
+                            TongSoLuong = group.Sum(item => item.SoLuong)
+                        }).ToList();
 
-                    dgvListCanLay_t2.DataSource = sortedData;
+                    // Nạp dữ liệu vào DataGridView
+                    dgvListCanLay_t2.DataSource = tongSoLuongTheoMaHang;
                 }
                 AnNutChonListLayHang();
                 HienNutXemTonKho();
@@ -372,15 +354,21 @@ namespace QuanLyKhoFashion
                 string maHang = row.Cells["Mahang"].Value?.ToString();
                 string bienthe = row.Cells["BienThe"].Value?.ToString();
                 // Kiểm tra nếu maHang hoặc bienthe là null thì bỏ qua vòng lặp
-                if (maHang == null || bienthe == null)
+                if (maHang == null)
                 {
                     continue;
                 }
 
                 int soLuongCanLay = Convert.ToInt32(row.Cells["TongSoLuong"].Value);
 
+                /*
                 var availableRows = dgvTonKho.Rows.Cast<DataGridViewRow>()
                     .Where(r => r.Cells["mahang"].Value?.ToString() == maHang && r.Cells["bienthe"].Value?.ToString() == bienthe )
+                    .OrderBy(r => Convert.ToInt32(r.Cells["soluong_tonkho"].Value))
+                    .ToList();
+                */
+                var availableRows = dgvTonKho.Rows.Cast<DataGridViewRow>()
+                    .Where(r => r.Cells["mahang"].Value?.ToString() == maHang)
                     .OrderBy(r => Convert.ToInt32(r.Cells["soluong_tonkho"].Value))
                     .ToList();
 
@@ -444,7 +432,7 @@ namespace QuanLyKhoFashion
         }
         private void btnXacNhanXuatHang_t2_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn xác nhận việc nhập hàng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn có muốn xác nhận việc xuất hàng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -488,18 +476,47 @@ namespace QuanLyKhoFashion
         private void LoadMatHang()
         {
             TruyvanSQL.SQLtoDGV(dgvMatHang_t4, "SELECT * FROM mathang");
-            List<string> tencot = new List<string> { "mahang", "tenhang" };
-            List<string> newHeader = new List<string> { "Mã Hàng", "Tên Hàng" };
+            List<string> tencot = new List<string> { "mahang", "tenhang","bienthe","linkanh" };
+            List<string> newHeader = new List<string> { "Mã Hàng", "Tên Hàng", "Biến Thể", "Link Ảnh" };
             ThaoTac.DoiTenCot(dgvMatHang_t4, tencot, newHeader);
             AdjustColumnWidths(dgvMatHang_t4);
         }
-        private void LoadLinkAnh()
+        private void LoadFileMatHang(string excelFilePath, DataGridView dgv)
         {
-            TruyvanSQL.SQLtoDGV(dgvAnh_BienThe_t4, "SELECT bienthe.mahang,mathang.tenhang,bienthe.bienthe,bienthe.linkanh FROM bienthe LEFT JOIN mathang ON bienthe.mahang=mathang.mahang");
-            List<string> tencot = new List<string> { "mahang", "tenhang", "bienthe", "linkanh" };
-            List<string> newHeader = new List<string> { "Mã Hàng", "Tên Hàng","Biến Thể","Link Ảnh" };
-            ThaoTac.DoiTenCot(dgvAnh_BienThe_t4, tencot, newHeader);
-            AdjustColumnWidths(dgvAnh_BienThe_t4);
+            try
+            {
+                using (ExcelPackage package = new ExcelPackage(new System.IO.FileInfo(excelFilePath)))
+                {
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0]; // Lấy worksheet đầu tiên
+
+                    DataTable dt = new DataTable();
+                    int totalCols = worksheet.Dimension.End.Column;
+
+                    // Tạo các cột cho DataTable dựa trên tên cột trong Excel
+                    for (int col = 1; col <= totalCols; col++)
+                    {
+                        dt.Columns.Add(worksheet.Cells[1, col].Value.ToString());
+                    }
+
+                    // Đọc dữ liệu từ Excel và thêm vào DataTable
+                    for (int row = 2; row <= worksheet.Dimension.End.Row; row++)
+                    {
+                        DataRow dataRow = dt.NewRow();
+                        for (int col = 1; col <= totalCols; col++)
+                        {
+                            dataRow[col - 1] = worksheet.Cells[row, col].Value;
+                        }
+                        dt.Rows.Add(dataRow);
+                    }
+
+                    // Nạp DataTable vào DataGridView
+                    dgv.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
         private void dgvBangVitri_t4_SelectionChanged(object sender, EventArgs e)
         {
@@ -566,6 +583,12 @@ namespace QuanLyKhoFashion
                 // Gán dữ liệu từ các ô trong dòng được chọn vào các TextBox tương ứng
                 txtMaHang_t4.Text = selectedRow.Cells["mahang"].Value.ToString();
                 txtTenHang_t4.Text = selectedRow.Cells["tenhang"].Value.ToString();
+                txtBienThe_t4.Text = selectedRow.Cells["bienthe"].Value.ToString();
+                txtLinkAnh_t4.Text = selectedRow.Cells["linkanh"].Value.ToString();
+
+                //Hiển thị ảnh minh họa
+                picAnh_Img_t4.Image = null;
+                ThaoTac.LoadImageFromURL(picAnh_Img_t4, selectedRow.Cells["linkanh"].Value.ToString());
             }
         }
         private void btnXoaMaHang_t4_Click(object sender, EventArgs e)
@@ -588,9 +611,11 @@ namespace QuanLyKhoFashion
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE mathang SET [tenhang]=@tenhang WHERE [mahang]=@mahang");
+                    SqlCommand cmd = new SqlCommand("UPDATE mathang SET [tenhang]=@tenhang,[bienthe]=@bienthe,[linkanh]=@linkanh WHERE [mahang]=@mahang");
                     cmd.Parameters.AddWithValue("@tenhang", txtTenHang_t4.Text);
                     cmd.Parameters.AddWithValue("@mahang", txtMaHang_t4.Text);
+                    cmd.Parameters.AddWithValue("bienthe", txtBienThe_t4.Text);
+                    cmd.Parameters.AddWithValue("linkanh", txtLinkAnh_t4.Text);
                     TruyvanSQL.ThemSuaXoa(cmd);
                     MessageBox.Show($"Sửa thành công mã hàng {txtMaHang_t4.Text}");
                 }
@@ -603,9 +628,11 @@ namespace QuanLyKhoFashion
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO mathang (mahang, tenhang) VALUES (@mahang, @tenhang)");
+                    SqlCommand cmd = new SqlCommand("INSERT INTO mathang (mahang, tenhang, bienthe, linkanh) VALUES (@mahang, @tenhang, @bienthe, @linkanh)");
                     cmd.Parameters.AddWithValue("@tenhang", txtTenHang_t4.Text);
                     cmd.Parameters.AddWithValue("@mahang", txtMaHang_t4.Text);
+                    cmd.Parameters.AddWithValue("bienthe", txtBienThe_t4.Text);
+                    cmd.Parameters.AddWithValue("linkanh",txtLinkAnh_t4.Text );
                     TruyvanSQL.ThemSuaXoa(cmd);
                     MessageBox.Show($"Thêm thành công mã hàng {txtMaHang_t4.Text}");
                 }
@@ -616,81 +643,32 @@ namespace QuanLyKhoFashion
             }
             LoadMatHang();
         }
-        private void dgvAnh_Link_t4_SelectionChanged(object sender, EventArgs e)
+        private void btn_CSHL_LoadFile_t4_Click(object sender, EventArgs e)
         {
-            if (dgvAnh_BienThe_t4.SelectedRows.Count > 0) // Kiểm tra xem có dòng được chọn không
+            // Chọn tệp Excel để nạp dữ liệu
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                DataGridViewRow selectedRow = dgvAnh_BienThe_t4.SelectedRows[0]; // Lấy dòng đầu tiên trong các dòng được chọn
-                // Gán dữ liệu từ các ô trong dòng được chọn vào các TextBox tương ứng
-                cboAnh_Mahang_t4.Text = selectedRow.Cells["mahang"].Value.ToString();
-                cboAnh_BienThe_t4.Text = selectedRow.Cells["bienthe"].Value.ToString();
-                txtAnh_Link_t4.Text = selectedRow.Cells["linkanh"].Value.ToString();
-                txtAnh_tenHang_t4.Text= selectedRow.Cells["tenhang"].Value.ToString();
-                //Hiển thị ảnh minh họa
-                picAnh_Img_t4.Image = null;
-                ThaoTac.LoadImageFromURL(picAnh_Img_t4, selectedRow.Cells["linkanh"].Value.ToString());
+                string excelFilePath = openFileDialog.FileName;
+                LoadFileMatHang(excelFilePath,dgv_ChinhsuaMatHang_HangLoat_t4);
             }
         }
-        private void btnAnh_ThemSua_t4_Click(object sender, EventArgs e)
-        {
-            if (TruyvanSQL.KiemTraTonTaiGiaTriTrongBangN("bienthe", "mahang", cboAnh_Mahang_t4.Text) && TruyvanSQL.KiemTraTonTaiGiaTriTrongBangN("bienthe", "bienthe", cboAnh_BienThe_t4.Text))
-            {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("UPDATE bienthe SET [linkanh]=@linkanh WHERE [mahang]=@mahang AND [bienthe]=@bienthe");
-                    cmd.Parameters.AddWithValue("@linkanh", txtAnh_Link_t4.Text);
-                    cmd.Parameters.AddWithValue("@mahang", cboAnh_Mahang_t4.Text);
-                    cmd.Parameters.AddWithValue("@bienthe", cboAnh_BienThe_t4.Text);
-                    TruyvanSQL.ThemSuaXoa(cmd);
-                    MessageBox.Show($"Sửa thành công biến thể {cboAnh_Mahang_t4.Text} {cboAnh_BienThe_t4.Text}");
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show($"Lỗi chưa sửa được biến thể {cboAnh_Mahang_t4.Text} {cboAnh_BienThe_t4.Text}");
-                }
-            }
-            else
-            {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO bienthe (mahang,bienthe, linkanh) VALUES (@mahang,@bienthe, @linkanh)");
-                    cmd.Parameters.AddWithValue("@mahang", cboAnh_Mahang_t4.Text);
-                    cmd.Parameters.AddWithValue("@bienthe", cboAnh_BienThe_t4.Text);
-                    cmd.Parameters.AddWithValue("@linkanh", txtAnh_Link_t4.Text);
-                    TruyvanSQL.ThemSuaXoa(cmd);
-                    MessageBox.Show($"Thêm thành công bien thể:  {cboAnh_Mahang_t4.Text} {cboAnh_BienThe_t4.Text}");
-                }
-                catch (Exception )
-                {
-                    MessageBox.Show($"Lỗi chưa thêm được biến thể {cboAnh_Mahang_t4.Text} {cboAnh_BienThe_t4.Text}");
-                }
-            }
-            LoadLinkAnh();
-        }
-        private void btnAnh_Xoa_t4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand($"DELETE FROM [bienthe] WHERE [mahang]='{cboAnh_Mahang_t4.Text}' AND [bienthe]=N'{cboAnh_BienThe_t4.Text}'");
-                TruyvanSQL.ThemSuaXoa(cmd);
-                MessageBox.Show($"Xóa thành công biến thể: {cboAnh_Mahang_t4.Text} {cboAnh_BienThe_t4.Text}");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show($"Lỗi chưa xóa được biến thể: {cboAnh_Mahang_t4.Text} {cboAnh_BienThe_t4.Text}");
-            }
-            LoadLinkAnh();
-        }
-        private void txtAnh_Link_t4_Leave(object sender, EventArgs e)
+        private void txtLinkAnh_t4_Leave(object sender, EventArgs e)
         {
             picAnh_Img_t4.Image = null;
-            ThaoTac.LoadImageFromURL(picAnh_Img_t4, txtAnh_Link_t4.Text);
+            ThaoTac.LoadImageFromURL(picAnh_Img_t4, txtLinkAnh_t4.Text);
+        }
+        private void btn_CSHL_ThemSua_t4_Click(object sender, EventArgs e)
+        {
+            TruyvanSQL.UpdateMatHangtoBangMatHang(dgv_ChinhsuaMatHang_HangLoat_t4);
         }
         /// <summary>
         /// Tab 3 Xử lý bill
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        //Nhập đơn tiktok
         private void btnChonFileBill_t3_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -707,7 +685,7 @@ namespace QuanLyKhoFashion
                     DataTable dt = new DataTable();
                     // Add column title từ file excel
                     
-                    foreach (int columnIndex in new int[] { 7, 8, 9, 10, 34 })
+                    foreach (int columnIndex in new int[] { 7, 8, 9, 10, 34, 36, 37 })
                     {
                         dt.Columns.Add(worksheet.Cells[1, columnIndex].Text, typeof(string));
                     }
@@ -718,7 +696,7 @@ namespace QuanLyKhoFashion
 
                         DataRow newRow = dt.NewRow();
 
-                        foreach (int columnIndex in new int[] { 7, 8, 9, 10, 34 })
+                        foreach (int columnIndex in new int[] { 7, 8, 9, 10, 34, 36, 37 })
                         {
                             string cellValue = worksheet.Cells[row, columnIndex].Text;
 
@@ -749,9 +727,98 @@ namespace QuanLyKhoFashion
             ThaoTac.XuatExcelTiktok(dgvXuLyBill_t3, "Tiktok");
             AnNutNhapVaoHeThong_Tiktok();
             HienNutChonFileBill_Tiktok();
+            dgvXuLyBill_t3.DataSource = null;
         }
+        //Nhập đơn shoppe
+        private void btnChonFileBill_t3_Shopee_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files|*.xls;*.xlsx";
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Load data from Excel file
+                using (var package = new ExcelPackage(new System.IO.FileInfo(openFileDialog.FileName)))
+                {
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
 
+                    // Tạo bảng và add columns
+                    DataTable dt = new DataTable();
+                    // Add column title từ file excel
+
+                    foreach (int columnIndex in new int[] { 19, 16, 20, 26, 6, 7, 5 })
+                    {
+                        dt.Columns.Add(worksheet.Cells[1, columnIndex].Text, typeof(string));
+                    }
+                    dt.Columns.Add("Noiban");
+                    // Loop through rows in the Excel worksheet and add data to DataTable
+                    for (int row = worksheet.Dimension.Start.Row + 2; row <= worksheet.Dimension.End.Row; row++)
+                    {
+
+                        DataRow newRow = dt.NewRow();
+
+                        foreach (int columnIndex in new int[] { 19, 16, 20, 26, 6, 7, 5 })
+                        {
+                            string cellValue = worksheet.Cells[row, columnIndex].Text;
+
+                            // Check if the cell has data
+                            if (!string.IsNullOrEmpty(cellValue))
+                            {
+                                newRow[worksheet.Cells[1, columnIndex].Text] = cellValue;
+                            }
+                            else
+                            {
+                                //newRow[worksheet.Cells[1, columnIndex].Text] = "N/A"; // Điền N/A nếu dữ liệu trong ô tính excel là trống.
+                            }
+                        }
+                        newRow["Noiban"] = "Shoppe";
+                        dt.Rows.Add(newRow);
+                    }
+                    //Đổi tên cột về đúng chuẩn tiktok
+                    dt.Columns["SKU phân loại hàng"].ColumnName = "Seller SKU";
+                    dt.Columns["Tên sản phẩm"].ColumnName = "Product Name";
+                    dt.Columns["Tên phân loại hàng"].ColumnName = "Variation";
+                    dt.Columns["Số lượng"].ColumnName = "Quantity";
+                    dt.Columns["Mã vận đơn"].ColumnName = "Tracking ID";
+                    dt.Columns["Đơn Vị Vận Chuyển"].ColumnName = "Shipping Provider Name";
+                    dt.Columns["Nhận xét từ Người mua"].ColumnName = "Buyer Message";
+                    // Gán DataTable to DataGridView
+                    dgvXuLyBill_t3.DataSource = dt;
+                }
+                HienNutNhapVaoHeThong_Shopee();
+                AnNutChonFileBill_Shopee();
+            }
+        }
+        private void btn_Nhapvaohethong_t3_Shopee_Click(object sender, EventArgs e)
+        {
+            TruyvanSQL.UpdateLayHangtoDongGoi(dgvXuLyBill_t3);
+            ThaoTac.XuatExcelTiktok(dgvXuLyBill_t3, "Shoppe");
+            AnNutNhapVaoHeThong_Shopee();
+            HienNutChonFileBill_Shopee();
+            dgvXuLyBill_t3.DataSource = null;   
+        }
+        /// <summary>
+        /// Tab 5 Nhập hàng loạt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
+        private void btn_ChonFile_t5_Click(object sender, EventArgs e)
+        {
+            // Chọn tệp Excel để nạp dữ liệu
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string excelFilePath = openFileDialog.FileName;
+                LoadFileMatHang(excelFilePath, dgvNhapHangLoat_t5);
+            }
+        }
+        private void btn_Nhap_t5_Click(object sender, EventArgs e)
+        {
+            TruyvanSQL.NhapHangLoat(dgvNhapHangLoat_t5);
+            dgvNhapHangLoat_t5.DataSource = null;
+        }
     }
 
 }

@@ -156,7 +156,7 @@ namespace QuanLyKhoFashion
             try
             {
                 Ketnoi.Open();
-                string command = $"SELECT lichsu.vitri,lichsu.mahang,mathang.tenhang,lichsu.bienthe,SUM(CASE WHEN trangthai = 'in' THEN soluong ELSE -soluong END) AS soluong_tonkho FROM lichsu LEFT JOIN mathang ON lichsu.mahang=mathang.mahang  WHERE {dieukien} GROUP BY lichsu.vitri,lichsu.mahang,mathang.tenhang,lichsu.bienthe";
+                string command = $"SELECT lichsu.vitri,lichsu.mahang,mathang.tenhang,mathang.bienthe,SUM(CASE WHEN trangthai = 'in' THEN soluong ELSE -soluong END) AS soluong_tonkho FROM lichsu LEFT JOIN mathang ON lichsu.mahang=mathang.mahang  WHERE {dieukien} GROUP BY lichsu.vitri,lichsu.mahang,mathang.tenhang,mathang.bienthe";
                 SqlCommand cmd = new SqlCommand(command, Ketnoi);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -200,13 +200,13 @@ namespace QuanLyKhoFashion
             return str;
         }
         //Nhập hàng
-        public static void NhapHang(string vitri, string mahang, string bienthe, int soluong)
+        public static void NhapHang(string vitri, string mahang, int soluong, int gianhap)
         {
-            SqlCommand cmd = new SqlCommand($"INSERT INTO lichsu (vitri, mahang, bienthe, soluong, thoigian, trangthai) VALUES (@vitri, @mahang,@bienthe,@soluong',GETDATE(), 'in')");
+            SqlCommand cmd = new SqlCommand($"INSERT INTO lichsu (vitri, mahang, soluong, thoigian, trangthai, gianhap) VALUES (@vitri, @mahang,@soluong,GETDATE(), 'in',@gianhap)");
             cmd.Parameters.AddWithValue("@vitri", vitri);
             cmd.Parameters.AddWithValue("@mahang", mahang);
-            cmd.Parameters.AddWithValue("@bienthe", bienthe);
             cmd.Parameters.AddWithValue("@soluong", soluong);
+            cmd.Parameters.AddWithValue("@gianhap", gianhap);
             ThemSuaXoa(cmd);
         }
         //Xuất hàng
@@ -290,10 +290,9 @@ namespace QuanLyKhoFashion
                     string bienthe = row.Cells["bienthe_layhang"].Value.ToString();
                     int soluong = Convert.ToInt32(row.Cells["soluong_layhang"].Value.ToString());
 
-                    SqlCommand query = new SqlCommand("INSERT INTO lichsu (vitri, mahang, bienthe,soluong, thoigian, trangthai) VALUES (@vitri, @mahang,@bienthe,@soluong,GETDATE(), 'out');");
+                    SqlCommand query = new SqlCommand("INSERT INTO lichsu (vitri, mahang,soluong, thoigian, trangthai) VALUES (@vitri, @mahang,@soluong,GETDATE(), 'out');");
                     query.Parameters.AddWithValue("@vitri", vitri);
                     query.Parameters.AddWithValue("@mahang", mahang);
-                    query.Parameters.AddWithValue("@bienthe", bienthe);
                     query.Parameters.AddWithValue("@soluong", soluong);
                     ThemSuaXoa(query);
                     
@@ -301,6 +300,65 @@ namespace QuanLyKhoFashion
             }
             ketnoi.Close();
             MessageBox.Show("Cập nhật dữ liệu lấy hàng thành công!");
+        }
+        //Đẩy dữ liệu từ DGV Mặt Hàng insert lên bảng Mặt Hàng MSSQL
+        public static void UpdateMatHangtoBangMatHang(DataGridView dgv)
+        {
+            SqlConnection ketnoi = TaoKetNoi();
+            ketnoi.Open();
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (row.Cells["mahang"].Value != null)
+                {
+                    string mahang = row.Cells["mahang"].Value.ToString();
+                    string tenhang = row.Cells["tenhang"].Value.ToString();
+                    string bienthe = row.Cells["bienthe"].Value.ToString();
+                    string linkanh = row.Cells["linkanh"].Value.ToString();
+                    if (!KiemTraTonTaiGiaTriTrongBangPlus("mathang", "mahang='" +mahang+"'"))
+                    {
+                        SqlCommand query = new SqlCommand("INSERT INTO mathang (mahang, tenhang, bienthe,linkanh) VALUES (@mahang, @tenhang, @bienthe,@linkanh);");
+                        query.Parameters.AddWithValue("@mahang", mahang);
+                        query.Parameters.AddWithValue("@tenhang", tenhang);
+                        query.Parameters.AddWithValue("@bienthe", bienthe);
+                        query.Parameters.AddWithValue("@linkanh", linkanh);
+                        ThemSuaXoa(query);
+                    }else
+                    {
+                        SqlCommand query = new SqlCommand("UPDATE mathang " +
+                            "SET tenhang=@tenhang," +
+                            "bienthe=@bienthe," +
+                            "linkanh=@linkanh " +
+                            "WHERE mahang=@mahang");
+                        query.Parameters.AddWithValue("@mahang", mahang);
+                        query.Parameters.AddWithValue("@tenhang", tenhang);
+                        query.Parameters.AddWithValue("@bienthe", bienthe);
+                        query.Parameters.AddWithValue("@linkanh", linkanh);
+                        ThemSuaXoa(query);
+                    }
+
+                }
+            }
+            ketnoi.Close();
+            MessageBox.Show("Cập nhật dữ liệu mặt hàng thành công!");
+        }
+        //Đẩy dữ liệu từ DGV Mặt Hàng insert lên bảng Mặt Hàng MSSQL
+        public static void NhapHangLoat(DataGridView dgv)
+        {
+            SqlConnection ketnoi = TaoKetNoi();
+            ketnoi.Open();
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (row.Cells["mahang"].Value != null)
+                {
+                    string vitri = row.Cells["vitri"].Value.ToString();
+                    string mahang = row.Cells["mahang"].Value.ToString();
+                    int soluong = Convert.ToInt32(row.Cells["soluong"].Value.ToString());
+                    int gianhap = Convert.ToInt32(row.Cells["gianhap"].Value.ToString());
+                    NhapHang(vitri, mahang, soluong, gianhap);
+                }
+            }
+            ketnoi.Close();
+            MessageBox.Show("Cập nhật dữ liệu mặt hàng thành công!");
         }
         //Đẩy dữ liệu từ DGV Lấy hàng insert lên bảng đóng gói MSSQL
         public static void UpdateLayHangtoDongGoi(DataGridView dgv)
@@ -313,14 +371,16 @@ namespace QuanLyKhoFashion
                 {
                     string vandon = row.Cells["Tracking ID"].Value.ToString();
                     string mahang = row.Cells["Seller SKU"].Value.ToString();
-                    string bienthe = row.Cells["Variation"].Value.ToString();
                     int soluong = Convert.ToInt32(row.Cells["Quantity"].Value.ToString());
+                    string dvVanChuyen = row.Cells["Shipping Provider Name"].Value.ToString();
+                    string tinnhan= row.Cells["Buyer Message"].Value.ToString();
 
-                    SqlCommand query = new SqlCommand("INSERT INTO donggoi (vandon,mahang,bienthe,soluong) VALUES (@vandon,@mahang,@bienthe,@soluong)");
+                    SqlCommand query = new SqlCommand("INSERT INTO donggoi (vandon,mahang,soluong,dvvanchuyen,tinnhan) VALUES (@vandon,@mahang,@soluong,@dvvanchuyen,@tinnhan)");
                     query.Parameters.AddWithValue("@vandon", vandon);
                     query.Parameters.AddWithValue("@mahang", mahang);
-                    query.Parameters.AddWithValue("@bienthe", bienthe);
                     query.Parameters.AddWithValue("@soluong", soluong);
+                    query.Parameters.AddWithValue("@dvvanchuyen", dvVanChuyen);
+                    query.Parameters.AddWithValue("@tinnhan", tinnhan);
                     ThemSuaXoa(query);
 
                 }
