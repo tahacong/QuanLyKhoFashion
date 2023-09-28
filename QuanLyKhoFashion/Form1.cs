@@ -207,7 +207,7 @@ namespace QuanLyKhoFashion
         }
         private void cboBienThe_t1_TextChanged(object sender, EventArgs e)
         {
-            lblSLBienThe.Text = Convert.ToString(TruyvanSQL.HangTonKho("mahang='" + txtMaSKU_t1.Text + "' AND bienthe='" + cboBienThe_t1.Text + "'"));
+            lblSLBienThe.Text = Convert.ToString(TruyvanSQL.HangTonKho("mahang='" + txtMaSKU_t1.Text + "' AND bienthe=N'" + cboBienThe_t1.Text + "'"));
             picMau.Image = null;
             ThaoTac.LoadImageFromURL(picMau, TruyvanSQL.LoadSqltoString($"SELECT [linkanh] FROM [bienthe] WHERE mahang='{txtMaSKU_t1.Text}' AND bienthe=N'{cboBienThe_t1.Text}'"));
         }
