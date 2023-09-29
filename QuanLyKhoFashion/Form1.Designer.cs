@@ -34,6 +34,8 @@ namespace QuanLyKhoFashion
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtGiaNhap_t1 = new System.Windows.Forms.TextBox();
             this.txtBienThe_t1 = new System.Windows.Forms.TextBox();
             this.btnXemTonKho_t1 = new System.Windows.Forms.Button();
             this.picMau = new System.Windows.Forms.PictureBox();
@@ -69,6 +71,14 @@ namespace QuanLyKhoFashion
             this.btnChonListLayHang_t2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvHangthieu = new System.Windows.Forms.DataGridView();
+            this.splitContainer10 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer11 = new System.Windows.Forms.SplitContainer();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvLayHang = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvListCanLay_t2 = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgvTonKho_t2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
@@ -111,19 +121,9 @@ namespace QuanLyKhoFashion
             this.picAnh_Img_t4 = new System.Windows.Forms.PictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
-            this.dgvNhapHangLoat_t5 = new System.Windows.Forms.DataGridView();
-            this.btn_ChonFile_t5 = new System.Windows.Forms.Button();
             this.btn_Nhap_t5 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtGiaNhap_t1 = new System.Windows.Forms.TextBox();
-            this.splitContainer10 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer11 = new System.Windows.Forms.SplitContainer();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dgvListCanLay_t2 = new System.Windows.Forms.DataGridView();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgvTonKho_t2 = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvLayHang = new System.Windows.Forms.DataGridView();
+            this.btn_ChonFile_t5 = new System.Windows.Forms.Button();
+            this.dgvNhapHangLoat_t5 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -153,6 +153,20 @@ namespace QuanLyKhoFashion
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangthieu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).BeginInit();
+            this.splitContainer10.Panel1.SuspendLayout();
+            this.splitContainer10.Panel2.SuspendLayout();
+            this.splitContainer10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer11)).BeginInit();
+            this.splitContainer11.Panel1.SuspendLayout();
+            this.splitContainer11.Panel2.SuspendLayout();
+            this.splitContainer11.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLayHang)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListCanLay_t2)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho_t2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
             this.splitContainer8.Panel1.SuspendLayout();
@@ -189,20 +203,6 @@ namespace QuanLyKhoFashion
             this.splitContainer9.Panel2.SuspendLayout();
             this.splitContainer9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapHangLoat_t5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).BeginInit();
-            this.splitContainer10.Panel1.SuspendLayout();
-            this.splitContainer10.Panel2.SuspendLayout();
-            this.splitContainer10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer11)).BeginInit();
-            this.splitContainer11.Panel1.SuspendLayout();
-            this.splitContainer11.Panel2.SuspendLayout();
-            this.splitContainer11.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListCanLay_t2)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho_t2)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLayHang)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -219,7 +219,7 @@ namespace QuanLyKhoFashion
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1513, 602);
+            this.tabControl1.Size = new System.Drawing.Size(1852, 893);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -230,7 +230,7 @@ namespace QuanLyKhoFashion
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tabPage1.Size = new System.Drawing.Size(1505, 573);
+            this.tabPage1.Size = new System.Drawing.Size(1844, 864);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhập Hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -250,8 +250,8 @@ namespace QuanLyKhoFashion
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvTonKho);
-            this.splitContainer1.Size = new System.Drawing.Size(1501, 567);
-            this.splitContainer1.SplitterDistance = 288;
+            this.splitContainer1.Size = new System.Drawing.Size(1840, 858);
+            this.splitContainer1.SplitterDistance = 435;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -287,9 +287,29 @@ namespace QuanLyKhoFashion
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(1501, 288);
-            this.splitContainer2.SplitterDistance = 643;
+            this.splitContainer2.Size = new System.Drawing.Size(1840, 435);
+            this.splitContainer2.SplitterDistance = 788;
             this.splitContainer2.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(14, 146);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 16);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Giá Nhập:";
+            // 
+            // txtGiaNhap_t1
+            // 
+            this.txtGiaNhap_t1.Location = new System.Drawing.Point(126, 142);
+            this.txtGiaNhap_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtGiaNhap_t1.Name = "txtGiaNhap_t1";
+            this.txtGiaNhap_t1.Size = new System.Drawing.Size(293, 22);
+            this.txtGiaNhap_t1.TabIndex = 4;
+            this.txtGiaNhap_t1.Text = "0";
             // 
             // txtBienThe_t1
             // 
@@ -317,10 +337,10 @@ namespace QuanLyKhoFashion
             // 
             this.picMau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMau.Location = new System.Drawing.Point(472, 18);
+            this.picMau.Location = new System.Drawing.Point(617, 3);
             this.picMau.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.picMau.Name = "picMau";
-            this.picMau.Size = new System.Drawing.Size(169, 244);
+            this.picMau.Size = new System.Drawing.Size(169, 391);
             this.picMau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picMau.TabIndex = 16;
             this.picMau.TabStop = false;
@@ -497,8 +517,8 @@ namespace QuanLyKhoFashion
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer3.Size = new System.Drawing.Size(854, 288);
-            this.splitContainer3.SplitterDistance = 437;
+            this.splitContainer3.Size = new System.Drawing.Size(1048, 435);
+            this.splitContainer3.SplitterDistance = 536;
             this.splitContainer3.TabIndex = 0;
             // 
             // groupBox2
@@ -509,7 +529,7 @@ namespace QuanLyKhoFashion
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox2.Size = new System.Drawing.Size(437, 288);
+            this.groupBox2.Size = new System.Drawing.Size(536, 435);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hàng tại các vị trí";
@@ -521,8 +541,10 @@ namespace QuanLyKhoFashion
             this.dgvHang.Location = new System.Drawing.Point(2, 18);
             this.dgvHang.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvHang.Name = "dgvHang";
-            this.dgvHang.Size = new System.Drawing.Size(433, 267);
+            this.dgvHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHang.Size = new System.Drawing.Size(532, 414);
             this.dgvHang.TabIndex = 0;
+            this.dgvHang.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvHang_MouseClick);
             // 
             // groupBox1
             // 
@@ -532,7 +554,7 @@ namespace QuanLyKhoFashion
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Size = new System.Drawing.Size(413, 288);
+            this.groupBox1.Size = new System.Drawing.Size(508, 435);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vị trí có";
@@ -544,8 +566,10 @@ namespace QuanLyKhoFashion
             this.dgvVitri.Location = new System.Drawing.Point(2, 18);
             this.dgvVitri.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvVitri.Name = "dgvVitri";
-            this.dgvVitri.Size = new System.Drawing.Size(409, 267);
+            this.dgvVitri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVitri.Size = new System.Drawing.Size(504, 414);
             this.dgvVitri.TabIndex = 0;
+            this.dgvVitri.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVitri_CellClick);
             // 
             // dgvTonKho
             // 
@@ -554,8 +578,10 @@ namespace QuanLyKhoFashion
             this.dgvTonKho.Location = new System.Drawing.Point(0, 0);
             this.dgvTonKho.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvTonKho.Name = "dgvTonKho";
-            this.dgvTonKho.Size = new System.Drawing.Size(1501, 275);
+            this.dgvTonKho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTonKho.Size = new System.Drawing.Size(1840, 419);
             this.dgvTonKho.TabIndex = 1;
+            this.dgvTonKho.SelectionChanged += new System.EventHandler(this.dgvTonKho_SelectionChanged);
             // 
             // tabPage2
             // 
@@ -708,6 +734,110 @@ namespace QuanLyKhoFashion
             this.dgvHangthieu.Name = "dgvHangthieu";
             this.dgvHangthieu.Size = new System.Drawing.Size(771, 157);
             this.dgvHangthieu.TabIndex = 0;
+            // 
+            // splitContainer10
+            // 
+            this.splitContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer10.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer10.Name = "splitContainer10";
+            // 
+            // splitContainer10.Panel1
+            // 
+            this.splitContainer10.Panel1.Controls.Add(this.splitContainer11);
+            // 
+            // splitContainer10.Panel2
+            // 
+            this.splitContainer10.Panel2.Controls.Add(this.groupBox5);
+            this.splitContainer10.Size = new System.Drawing.Size(1501, 379);
+            this.splitContainer10.SplitterDistance = 761;
+            this.splitContainer10.TabIndex = 0;
+            // 
+            // splitContainer11
+            // 
+            this.splitContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer11.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer11.Name = "splitContainer11";
+            this.splitContainer11.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer11.Panel1
+            // 
+            this.splitContainer11.Panel1.Controls.Add(this.groupBox3);
+            // 
+            // splitContainer11.Panel2
+            // 
+            this.splitContainer11.Panel2.Controls.Add(this.groupBox4);
+            this.splitContainer11.Size = new System.Drawing.Size(761, 379);
+            this.splitContainer11.SplitterDistance = 176;
+            this.splitContainer11.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvLayHang);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox3.Size = new System.Drawing.Size(761, 176);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Vị trí, số lượng hàng sẽ lấy";
+            // 
+            // dgvLayHang
+            // 
+            this.dgvLayHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLayHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLayHang.Location = new System.Drawing.Point(2, 18);
+            this.dgvLayHang.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvLayHang.Name = "dgvLayHang";
+            this.dgvLayHang.Size = new System.Drawing.Size(757, 155);
+            this.dgvLayHang.TabIndex = 24;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dgvListCanLay_t2);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox4.Size = new System.Drawing.Size(761, 199);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "List cần lấy";
+            // 
+            // dgvListCanLay_t2
+            // 
+            this.dgvListCanLay_t2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListCanLay_t2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvListCanLay_t2.Location = new System.Drawing.Point(2, 18);
+            this.dgvListCanLay_t2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvListCanLay_t2.Name = "dgvListCanLay_t2";
+            this.dgvListCanLay_t2.Size = new System.Drawing.Size(757, 178);
+            this.dgvListCanLay_t2.TabIndex = 27;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dgvTonKho_t2);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox5.Size = new System.Drawing.Size(736, 379);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Tồn Kho";
+            // 
+            // dgvTonKho_t2
+            // 
+            this.dgvTonKho_t2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTonKho_t2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTonKho_t2.Location = new System.Drawing.Point(2, 18);
+            this.dgvTonKho_t2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvTonKho_t2.Name = "dgvTonKho_t2";
+            this.dgvTonKho_t2.Size = new System.Drawing.Size(732, 358);
+            this.dgvTonKho_t2.TabIndex = 26;
             // 
             // tabPage3
             // 
@@ -1201,14 +1331,15 @@ namespace QuanLyKhoFashion
             this.splitContainer9.SplitterDistance = 499;
             this.splitContainer9.TabIndex = 0;
             // 
-            // dgvNhapHangLoat_t5
+            // btn_Nhap_t5
             // 
-            this.dgvNhapHangLoat_t5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhapHangLoat_t5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNhapHangLoat_t5.Location = new System.Drawing.Point(0, 0);
-            this.dgvNhapHangLoat_t5.Name = "dgvNhapHangLoat_t5";
-            this.dgvNhapHangLoat_t5.Size = new System.Drawing.Size(996, 567);
-            this.dgvNhapHangLoat_t5.TabIndex = 0;
+            this.btn_Nhap_t5.Location = new System.Drawing.Point(30, 67);
+            this.btn_Nhap_t5.Name = "btn_Nhap_t5";
+            this.btn_Nhap_t5.Size = new System.Drawing.Size(75, 23);
+            this.btn_Nhap_t5.TabIndex = 1;
+            this.btn_Nhap_t5.Text = "Nhập Hàng";
+            this.btn_Nhap_t5.UseVisualStyleBackColor = true;
+            this.btn_Nhap_t5.Click += new System.EventHandler(this.btn_Nhap_t5_Click);
             // 
             // btn_ChonFile_t5
             // 
@@ -1220,139 +1351,14 @@ namespace QuanLyKhoFashion
             this.btn_ChonFile_t5.UseVisualStyleBackColor = true;
             this.btn_ChonFile_t5.Click += new System.EventHandler(this.btn_ChonFile_t5_Click);
             // 
-            // btn_Nhap_t5
+            // dgvNhapHangLoat_t5
             // 
-            this.btn_Nhap_t5.Location = new System.Drawing.Point(30, 67);
-            this.btn_Nhap_t5.Name = "btn_Nhap_t5";
-            this.btn_Nhap_t5.Size = new System.Drawing.Size(75, 23);
-            this.btn_Nhap_t5.TabIndex = 1;
-            this.btn_Nhap_t5.Text = "Nhập Hàng";
-            this.btn_Nhap_t5.UseVisualStyleBackColor = true;
-            this.btn_Nhap_t5.Click += new System.EventHandler(this.btn_Nhap_t5_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 146);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 16);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Giá Nhập:";
-            // 
-            // txtGiaNhap_t1
-            // 
-            this.txtGiaNhap_t1.Location = new System.Drawing.Point(126, 142);
-            this.txtGiaNhap_t1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtGiaNhap_t1.Name = "txtGiaNhap_t1";
-            this.txtGiaNhap_t1.Size = new System.Drawing.Size(293, 22);
-            this.txtGiaNhap_t1.TabIndex = 4;
-            this.txtGiaNhap_t1.Text = "0";
-            // 
-            // splitContainer10
-            // 
-            this.splitContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer10.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer10.Name = "splitContainer10";
-            // 
-            // splitContainer10.Panel1
-            // 
-            this.splitContainer10.Panel1.Controls.Add(this.splitContainer11);
-            // 
-            // splitContainer10.Panel2
-            // 
-            this.splitContainer10.Panel2.Controls.Add(this.groupBox5);
-            this.splitContainer10.Size = new System.Drawing.Size(1501, 379);
-            this.splitContainer10.SplitterDistance = 761;
-            this.splitContainer10.TabIndex = 0;
-            // 
-            // splitContainer11
-            // 
-            this.splitContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer11.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer11.Name = "splitContainer11";
-            this.splitContainer11.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer11.Panel1
-            // 
-            this.splitContainer11.Panel1.Controls.Add(this.groupBox3);
-            // 
-            // splitContainer11.Panel2
-            // 
-            this.splitContainer11.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer11.Size = new System.Drawing.Size(761, 379);
-            this.splitContainer11.SplitterDistance = 176;
-            this.splitContainer11.TabIndex = 0;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dgvListCanLay_t2);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox4.Size = new System.Drawing.Size(761, 199);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "List cần lấy";
-            // 
-            // dgvListCanLay_t2
-            // 
-            this.dgvListCanLay_t2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListCanLay_t2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvListCanLay_t2.Location = new System.Drawing.Point(2, 18);
-            this.dgvListCanLay_t2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvListCanLay_t2.Name = "dgvListCanLay_t2";
-            this.dgvListCanLay_t2.Size = new System.Drawing.Size(757, 178);
-            this.dgvListCanLay_t2.TabIndex = 27;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.dgvTonKho_t2);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(0, 0);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox5.Size = new System.Drawing.Size(736, 379);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Tồn Kho";
-            // 
-            // dgvTonKho_t2
-            // 
-            this.dgvTonKho_t2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTonKho_t2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTonKho_t2.Location = new System.Drawing.Point(2, 18);
-            this.dgvTonKho_t2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvTonKho_t2.Name = "dgvTonKho_t2";
-            this.dgvTonKho_t2.Size = new System.Drawing.Size(732, 358);
-            this.dgvTonKho_t2.TabIndex = 26;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvLayHang);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox3.Size = new System.Drawing.Size(761, 176);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Vị trí, số lượng hàng sẽ lấy";
-            // 
-            // dgvLayHang
-            // 
-            this.dgvLayHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLayHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvLayHang.Location = new System.Drawing.Point(2, 18);
-            this.dgvLayHang.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvLayHang.Name = "dgvLayHang";
-            this.dgvLayHang.Size = new System.Drawing.Size(757, 155);
-            this.dgvLayHang.TabIndex = 24;
+            this.dgvNhapHangLoat_t5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhapHangLoat_t5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNhapHangLoat_t5.Location = new System.Drawing.Point(0, 0);
+            this.dgvNhapHangLoat_t5.Name = "dgvNhapHangLoat_t5";
+            this.dgvNhapHangLoat_t5.Size = new System.Drawing.Size(996, 567);
+            this.dgvNhapHangLoat_t5.TabIndex = 0;
             // 
             // tabPage6
             // 
@@ -1368,7 +1374,7 @@ namespace QuanLyKhoFashion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1513, 602);
+            this.ClientSize = new System.Drawing.Size(1852, 893);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Form1";
@@ -1405,6 +1411,20 @@ namespace QuanLyKhoFashion
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangthieu)).EndInit();
+            this.splitContainer10.Panel1.ResumeLayout(false);
+            this.splitContainer10.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).EndInit();
+            this.splitContainer10.ResumeLayout(false);
+            this.splitContainer11.Panel1.ResumeLayout(false);
+            this.splitContainer11.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer11)).EndInit();
+            this.splitContainer11.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLayHang)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListCanLay_t2)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho_t2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.splitContainer8.Panel1.ResumeLayout(false);
             this.splitContainer8.Panel2.ResumeLayout(false);
@@ -1443,20 +1463,6 @@ namespace QuanLyKhoFashion
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
             this.splitContainer9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapHangLoat_t5)).EndInit();
-            this.splitContainer10.Panel1.ResumeLayout(false);
-            this.splitContainer10.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).EndInit();
-            this.splitContainer10.ResumeLayout(false);
-            this.splitContainer11.Panel1.ResumeLayout(false);
-            this.splitContainer11.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer11)).EndInit();
-            this.splitContainer11.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListCanLay_t2)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho_t2)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLayHang)).EndInit();
             this.ResumeLayout(false);
 
         }

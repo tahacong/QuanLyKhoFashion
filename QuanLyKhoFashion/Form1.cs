@@ -146,7 +146,7 @@ namespace QuanLyKhoFashion
         }
 
         /// <summary>
-        /// PHẦN NHẬP HÀNG
+        /// PHẦN NHẬP HÀNG T1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -301,9 +301,20 @@ namespace QuanLyKhoFashion
             Ketnoi.Close();
             AdjustColumnWidths(dgvTonKho);
         }
+        private void dgvTonKho_SelectionChanged(object sender, EventArgs e)
+        {
+            // List<string> tencot = new List<string> { "vitri", "mahang", "tenhang", "bienthe", "soluong_tonkho" };
+            if (dgvTonKho.SelectedRows.Count > 0) // Kiểm tra xem có dòng được chọn không
+            {
+                DataGridViewRow selectedRow = dgvTonKho.SelectedRows[0]; // Lấy dòng đầu tiên trong các dòng được chọn
+                // Gán dữ liệu từ các ô trong dòng được chọn vào các TextBox tương ứng
+                txtMaSKU_t1.Text = selectedRow.Cells["mahang"].Value.ToString();
+                txtMaSKU_t1.TextChanged += txtMaSKU_t1_Leave;
+            }
+        }
         /// <summary>
-        /// PHẦN XUẤT HÀNG
-        /// </summary>
+        /// PHẦN XUẤT HÀNG T2
+        /// </summary> 
         private void LoadFileLayHang ()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -819,6 +830,29 @@ namespace QuanLyKhoFashion
             TruyvanSQL.NhapHangLoat(dgvNhapHangLoat_t5);
             dgvNhapHangLoat_t5.DataSource = null;
         }
-    }
 
+        private void dgvHang_MouseClick(object sender, MouseEventArgs e)
+        {
+            // List<string> tencot = new List<string> { "vitri", "mahang", "tenhang", "bienthe", "soluong_tonkho" };
+            if (dgvHang.SelectedRows.Count > 0) // Kiểm tra xem có dòng được chọn không
+            {
+                DataGridViewRow selectedRow = dgvHang.SelectedRows[0]; // Lấy dòng đầu tiên trong các dòng được chọn
+                // Gán dữ liệu từ các ô trong dòng được chọn vào các TextBox tương ứng
+                txtMaSKU_t1.Text = selectedRow.Cells["mahang"].Value.ToString();
+                txtMaSKU_t1.TextChanged += txtMaSKU_t1_Leave;
+            }
+        }
+
+        private void dgvVitri_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // List<string> tencot = new List<string> { "vitri", "mahang", "tenhang", "bienthe", "soluong_tonkho" };
+            if (dgvVitri.SelectedRows.Count > 0) // Kiểm tra xem có dòng được chọn không
+            {
+                DataGridViewRow selectedRow = dgvVitri.SelectedRows[0]; // Lấy dòng đầu tiên trong các dòng được chọn
+                // Gán dữ liệu từ các ô trong dòng được chọn vào các TextBox tương ứng
+                txtMaSKU_t1.Text = selectedRow.Cells["mahang"].Value.ToString();
+                txtMaSKU_t1.TextChanged += txtMaSKU_t1_Leave;
+            }
+        }
+    }
 }
