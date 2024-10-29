@@ -82,7 +82,6 @@ namespace QuanLyKhoFashion
             }
             MoExcelFile(filePath+fileName);
         }
-
         //Xuất file Excel từ DGV không mở file
         public static void XuatExceltuDGBKhongMo(DataGridView dgv, string TenThuMuc)
         {
@@ -193,7 +192,6 @@ namespace QuanLyKhoFashion
             }
             MoExcelFile(filePath + fileName);
         }
-
         //Mở file excel vừa tạo
         public static void MoExcelFile(string filePath)
         {

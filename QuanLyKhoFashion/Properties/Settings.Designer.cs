@@ -25,7 +25,7 @@ namespace QuanLyKhoFashion.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=14.177.233.69,6688;Initial Catalog=fashionwh")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.7.23.8;Initial Catalog=fashionwh")]
         public string connectString {
             get {
                 return ((string)(this["connectString"]));

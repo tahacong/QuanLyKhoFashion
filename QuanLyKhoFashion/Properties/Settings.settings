@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="connectString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=14.177.233.69,6688;Initial Catalog=fashionwh</Value>
+      <Value Profile="(Default)">Data Source=10.7.23.8;Initial Catalog=fashionwh</Value>
     </Setting>
     <Setting Name="fashionwhConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

@@ -19,7 +19,6 @@ namespace QuanLyKhoFashion
         {
             return new SqlConnection(DuongDan);
         }
-
         public static DataTable TaoBang(string Sqlcm)   //Truy vấn SELECT và trả kết quả là 1 bảng data
         {
             SqlConnection ketnoi = TaoKetNoi();
@@ -44,7 +43,6 @@ namespace QuanLyKhoFashion
             Lenh.ExecuteNonQuery();
             Ketnoi.Close();
         }
-
         //Load dữ liệu từ 1 cột mssql lên combobox
         public static void HienThiLenCBO(string columnName, ComboBox cbobox, string table)
         {
@@ -148,7 +146,6 @@ namespace QuanLyKhoFashion
             Ketnoi.Close();
             return tongsoluong;
         }
-
         //Truy vấn 1 bảng và hiển thị dữ liệu lên datagridView
         public static void LoadDataDGV(DataGridView dgv, string dieukien)
         {
@@ -383,7 +380,10 @@ namespace QuanLyKhoFashion
                     query.Parameters.AddWithValue("@tinnhan", tinnhan);
                     ThemSuaXoa(query);
 
-                }
+                }else
+                {
+                    MessageBox.Show("Lỗi chưa nhập được đơn hàng số: {0}");     //Cần bổ sung thêm mã đơn hàng và ghi log để xác định những đơn chưa nhập được
+                }    
             }
             ketnoi.Close();
             MessageBox.Show("Cập nhật dữ liệu lấy hàng thành công!");
