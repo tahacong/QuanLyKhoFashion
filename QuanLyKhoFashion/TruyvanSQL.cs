@@ -13,8 +13,7 @@ namespace QuanLyKhoFashion
     class TruyvanSQL
     {
         // Ket noi den CSDL
-        //private static string DuongDan = Properties.Resources.duongdan; //"Data Source=10.7.23.8;Initial Catalog=fashionwh;Persist Security Info=True;User ID=sa;Password=Tanhatminh@123";
-        private static string DuongDan = Properties.Settings.Default.connectString+";Persist Security Info = True; User ID = sa; Password=Tanhatminh@123";
+        private static string DuongDan = Properties.Settings.Default.connectString+";Persist Security Info = True; User ID = sa; Password=pass";
         public static SqlConnection TaoKetNoi()
         {
             return new SqlConnection(DuongDan);
